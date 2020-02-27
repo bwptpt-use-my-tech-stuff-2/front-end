@@ -3,6 +3,7 @@ import { RenterContext } from './Context/RenterContext';
 import { UserContext } from './Context/UserContext';
 import UserForm from './Components/UserForm';
 import RenterForm from './Components/RenterForm';
+import SignInForm from './Components/SignUpForm';
 
 import './App.css';
 
@@ -24,8 +25,9 @@ function App() {
 		// <RenterContext.provider value={{ rentals, setRentals }}>
 		// <UserContext.provider value={{ owner, setOwner }}>
 		<div className='App'>
-			<UserForm />
-			<RenterForm />
+			{/* <UserForm />
+			<RenterForm /> */}
+			<SignInForm />
 		</div>
 		// </UserContext.provider>
 		// </RenterContext.provider>
