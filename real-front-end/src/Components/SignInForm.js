@@ -33,7 +33,8 @@ return (
             <label>
                 Password
                     <input 
-                        type='text'
+                        require
+                        type='password'
                         name='password'
                         onChange={event => handlePasswordChange(event)}
                     />
