@@ -1,11 +1,16 @@
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
+import './App.css';
+
+// Utils
 import PrivateRoute from './utils/privateRoute';
-import UserAdd from './Components/AddUser';
+
+// Components
+import SignUp from './Components/signUp';
+import Login from './Components/login';
 import AddItem from './Components/AddItem';
 import ItemsListed from './Components/ItemsListed';
 import ProfilePage from './Components/ProfilePage';
-import './App.css';
 import MyListing from './Components/MyListing';
 import ProductRent from "./Components/ProductRent";
 import ProductPrice from "./Components/ProductPrice";
@@ -44,19 +49,24 @@ function App() {
 				<Route exact path='/' component={ItemsListed} />
 				{/* <ItemsListed/> */}
 				<Route  path='/addItem' component={AddItem} />
-
+        <Route exact path='/login' component={Login} />
+        <Route exact path='/register' component={SignUp} />
 				<Route  path='/ProfilePage' component={ProfilePage} />
 				 {/* <Route exact path ="/Search" component ={SearchItem}/>  */}
 				<Route  path ="/Search" component ={ProductRent}/>
 				<Route  path="/ProductPrice" component ={ProductPrice}/>
 				<Route path="/ProductDate" component={ProductDate}/>
 				<Route path ="/ProductThankYou" component ={ProductThankYou}/>
-
+        <PrivateRoute>
+				<Route path='/secure' component={ProfilePage} />
+				</PrivateRoute>
 			</Router>
+    
 		</div>
-		// </UserContext.provider>
-		// </RenterContext.provider>
-	);
+    )
 }
 
+
+					
+				
 export default App;
