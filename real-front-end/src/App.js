@@ -45,6 +45,8 @@ function App() {
 					<Link to='/Search'> Search Item</Link>
 
 					<Link to='/ProfilePage'> ProfilePage</Link>
+					<Link to ="/login"> LogIn</Link>
+					<Link to ="/register">Signup</Link>
 				</nav>
 				<Route exact path='/' component={ItemsListed} />
 				{/* <ItemsListed/> */}
