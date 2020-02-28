@@ -25,9 +25,8 @@ function App() {
 		// <RenterContext.provider value={{ rentals, setRentals }}>
 		// <UserContext.provider value={{ owner, setOwner }}>
 		<div className='App'>
-			{/* <UserForm />
-			<RenterForm /> */}
-			<SignInForm />
+			<UserForm />
+			<RenterForm />
 		</div>
 		// </UserContext.provider>
 		// </RenterContext.provider>

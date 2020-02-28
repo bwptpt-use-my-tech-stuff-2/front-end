@@ -10,7 +10,7 @@ const handleNameChange = event => {
 };
 
 const handlePasswordChange = event => {
-    setUser({ ...user, password: event.target.value })
+    setUser({ ...user, password: event.target.value });
 };
 
 const handleSubmit = event => {
