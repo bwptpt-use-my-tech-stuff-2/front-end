@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import PrivateRoute from './utils/privateRoute';
 import UserAdd from './Components/AddUser';
 import AddItem from './Components/AddItem';
 import ItemsListed from './Components/ItemsListed';
