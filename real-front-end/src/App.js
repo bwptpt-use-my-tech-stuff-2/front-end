@@ -37,7 +37,6 @@ function App() {
 		// <RenterContext.provider value={{ rentals, setRentals }}>
 		// <UserContext.provider value={{ owner, setOwner }}>
 		<div className='App'>
-			<h1> USE MY TECH STUFF </h1>
 			<Router>
 				{/* <nav className='navbar'>
 					<Link to='/'> Home </Link>
