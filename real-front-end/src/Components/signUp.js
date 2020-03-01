@@ -1,4 +1,5 @@
 import React, { useState, useContext } from 'react';
+import Styled from 'styled-components';
 import { axiosWithAuth } from '../utils/axiosWithAuth';
 import { UserContext } from '../Context/UserContext';
 import { RenterContext } from '../Context/RenterContext';
@@ -14,6 +15,7 @@ const SignUp = props => {
 		Location: ''
 	});
 
+	// Functions
 	const handleChange = e => {
 		e.preventDefault();
 		setCredentials({ ...credentials, [e.target.name]: e.target.value });
@@ -32,11 +34,26 @@ const SignUp = props => {
 			});
 	};
 
+	// Styled Components
+	const Title = Styled.h1`
+		position: absolute;
+		left: 0%;
+		right: 0%;
+		top: 0%;
+		bottom: 5.26%;
+		font-family: SF Pro Text;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 30px;
+		line-height: 36px;
+	`;
+
+	// Destructuring
 	const { FirstName, LastName, Email, Password } = credentials;
 
 	return (
 		<div>
-			<h2>Sign up with email</h2>
+			<Title className='title'>Sign up with email</Title>
 			<form onSubmit={handleSubmit}>
 				<label>First name</label>
 				<input type='text' name='FirstName' value={FirstName} onChange={handleChange} />
