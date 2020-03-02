@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { axiosWithAuth } from '../utils/axiosWithAuth';
+import axios from 'axios';
 // import Styled from 'styled-components';
 
 const Login = props => {
@@ -18,7 +19,7 @@ const Login = props => {
 		axiosWithAuth()
 			.post('/auth/login', credentials)
 			.then(res => {
-				sessionStorage.setItem('token', res.data.payload);
+				sessionStorage.setItem('token', res.data.token);
 				props.history.push('/secure');
 			})
 			.catch(err => {
@@ -37,14 +38,14 @@ const Login = props => {
 						type='email'
 						name='Email'
 						value={Email}
-						require
+						required
 						onChange={handleChange}
 					/>
 				</label>
 				<label>
 					Password
 					<input
-						require
+						required
 						type='password'
 						name='Password'
 						value={Password}

@@ -14,6 +14,9 @@ const SignUp = props => {
 		LastName: '',
 		Location: ''
 	});
+	const [confirmPassword, setConfirmPassword] = useState({
+		ConfirmPassword: ''
+	});
 
 	// Functions
 	const handleChange = e => {
@@ -21,17 +24,25 @@ const SignUp = props => {
 		setCredentials({ ...credentials, [e.target.name]: e.target.value });
 	};
 
+	const handleChangePassword = e => {
+		e.preventDefault();
+		setConfirmPassword({ ...confirmPassword, [e.target.name]: e.target.value });
+	};
+
 	const handleSubmit = e => {
 		e.preventDefault();
-		axiosWithAuth()
-			.post('/auth/register', credentials)
-			.then(res => {
-				console.log(res);
-				props.history.push('/itemList');
-			})
-			.catch(err => {
-				console.error(err);
-			});
+		if (credentials.Password === confirmPassword.ConfirmPassword) {
+			axiosWithAuth()
+				.post('/auth/register', credentials)
+				.then(res => {
+					console.log(res);
+					props.history.push('/login');
+					alert('Account created! Login below');
+				})
+				.catch(err => {
+					console.error(err);
+				});
+		} else alert('Passwords do not match!!');
 	};
 
 	// Styled Components
@@ -50,19 +61,46 @@ const SignUp = props => {
 
 	// Destructuring
 	const { FirstName, LastName, Email, Password } = credentials;
+	const { ConfirmPassword } = confirmPassword;
 
 	return (
 		<div>
-			<Title className='title'>Sign up with email</Title>
+			<h1 className='title'>Sign up with email</h1>
 			<form onSubmit={handleSubmit}>
 				<label>First name</label>
-				<input type='text' name='FirstName' value={FirstName} onChange={handleChange} />
+				<input
+					type='text'
+					name='FirstName'
+					value={FirstName}
+					onChange={handleChange}
+					required
+				/>
 				<label>Last name</label>
-				<input type='text' name='LastName' value={LastName} onChange={handleChange} />
+				<input
+					type='text'
+					name='LastName'
+					value={LastName}
+					onChange={handleChange}
+					required
+				/>
 				<label>Email</label>
-				<input type='email' name='Email' value={Email} onChange={handleChange} />
+				<input type='email' name='Email' value={Email} onChange={handleChange} required />
 				<label>Password</label>
-				<input type='password' name='Password' value={Password} onChange={handleChange} />
+				<input
+					type='password'
+					name='Password'
+					value={Password}
+					onChange={handleChange}
+					required
+				/>
+				<label>Confirm Password</label>
+				<input
+					type='password'
+					name='ConfirmPassword'
+					value={ConfirmPassword}
+					onChange={handleChangePassword}
+					required
+				/>
 				<button onClick={handleSubmit}>Submit</button>
 			</form>
 		</div>
