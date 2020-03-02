@@ -1,8 +1,21 @@
-import React from 'react';
-
-const ItemsListed = () => {
+import React, { useEffect, useState } from 'react';
+import { axiosWithAuth } from '../utils/axiosWithAuth';
+export default function ItemsListed() {
+	const [itemInfo, setItemInfo] = useState([]);
+	useEffect(() => {
+		axiosWithAuth()
+			.get('https://ls-bwptpt-use-my-tech-stuff-2.herokuapp.com/api/stuff')
+			.then(response => {
+				setItemInfo(response);
+				console.log(itemInfo);
+			})
+			.catch(error => {
+				console.log('Error!', error);
+			});
+	}, []);
 	return (
 		<div>
+			<section className='item-list'></section>
 			<h1> Discover Products</h1>
 			<div>
 				<p>Image 1</p>
@@ -24,6 +37,4 @@ const ItemsListed = () => {
 			</div>
 		</div>
 	);
-};
-
-export default ItemsListed;
+}
