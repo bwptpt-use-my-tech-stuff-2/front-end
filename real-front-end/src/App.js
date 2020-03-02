@@ -18,6 +18,8 @@ import ProductRent from './Components/ProductRent';
 import ProductPrice from './Components/ProductPrice';
 import ProductDate from './Components/ProductDate';
 import ProductThankYou from './Components/ProductThankYou';
+import Users from './utils/users';
+import Navbar from './Components/navbar';
 
 function App() {
 	const [owner, setOwner] = useState([]);
@@ -38,33 +40,24 @@ function App() {
 		// <UserContext.provider value={{ owner, setOwner }}>
 		<div className='App'>
 			<Router>
-				{/* <nav className='navbar'>
-					<Link to='/'> Home </Link>
+				<Switch>
+					<Route exact path='/' component={ItemsListed} />
+					<Route path='/admin' component={Users} />
+					<Route path='/addItem' component={AddItem} />
+					<Route path='/edit-listing' component={EditListing} />
+					<Route exact path='/login' component={Login} />
+					<Route path='/listing-options' component={ListingOptions} />
+					<Route path='/ProfilePage' component={ProfilePage} />
+					{/* <Route path='/ProductDate' component={ProductDate} /> */}
+					<Route path='/ProductPrice' component={ProductPrice} />
+					<Route path='/ProductThankYou' component={ProductThankYou} />
+					<Route exact path='/register' component={SignUp} />
 
-					<Link to='/addItem'> AddItem</Link>
-
-					<Link to='/Search'> Search Item</Link>
-
-					<Link to='/ProfilePage'> ProfilePage</Link>
-					<Link to ="/login"> LogIn</Link>
-					<Link to ="/register">Signup</Link>
-				</nav> */}
-				<Route exact path='/' component={ItemsListed} />
-				{/* <ItemsListed/> */}
-				<Route path='/addItem' component={AddItem} />
-				<Route exact path='/login' component={Login} />
-				<Route exact path='/register' component={SignUp} />
-				<Route path='/ProfilePage' component={ProfilePage} />
-				{/* <Route exact path ="/Search" component ={SearchItem}/>  */}
-				<Route path='/Search' component={ProductRent} />
-				<Route path='/ProductPrice' component={ProductPrice} />
-				<Route path='/ProductDate' component={ProductDate} />
-				<Route path='/ProductThankYou' component={ProductThankYou} />
-				<Route path='/listing-options' component={ListingOptions} />
-				<Route path='/edit-listing' component={EditListing} />
-				<PrivateRoute>
-					<Route path='/secure' component={ProfilePage} />
-				</PrivateRoute>
+					<PrivateRoute>
+						<Route path='/secure' component={ProfilePage} />
+					</PrivateRoute>
+				</Switch>
+				<Navbar />
 			</Router>
 		</div>
 	);
