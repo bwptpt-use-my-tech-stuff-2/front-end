@@ -1,30 +1,45 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { axiosWithAuth } from '../utils/axiosWithAuth';
 
-const ItemsListed = () => {
-  return (
+
+export default function ItemsListed() {
+  const [itemInfo, setItemInfo] = useState([]);
+  
+  useEffect(() => {
+    axiosWithAuth()
+    .get('https://ls-bwptpt-use-my-tech-stuff-2.herokuapp.com/api/stuff')
+    .then(response => {
+      setItemInfo(response);
+        console.log(itemInfo);
+    })
+    .catch(error => {
+      console.log('Error!', error)
+    })
+  }, []);
+
+return (
     <div>
-      <h1> Discover Products</h1>
-       <div>
-        <p>Image 1</p>
-       </div>
-       <div>
-        <p>Image 2</p>
-       </div>
-       <div>
-        <p>Image 3</p>
-       </div>
-       <div>
-        <p>Image 4</p>
-       </div>
-       <div>
-        <p>Image 5</p>
-       </div>
-       <div>
-        <p>Image 6</p>
-       </div>
-       
+      <section className='item-list'></section>
+        <h1> Discover Products</h1>
+          <div>
+          <p>Image 1</p>
+        </div>
+        <div>
+          <p>Image 2</p>
+        </div>
+        <div>
+          <p>Image 3</p>
+        </div>
+        <div>
+          <p>Image 4</p>
+        </div>
+        <div>
+          <p>Image 5</p>
+        </div>
+        <div>
+          <p>Image 6</p>
+        </div>
+      
     </div>
   );
-};
-
-export default ItemsListed;
+}
