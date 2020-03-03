@@ -26,7 +26,7 @@ const AddItem = () => {
 		//post end point
 		axiosWithAuth()
 		.post("https://ls-bwptpt-use-my-tech-stuff-2.herokuapp.com/api/stuff",newListing)
-		.then(res=> console.log("User response", res))
+		.then(res=> console.log("User response", res.data))
 		//  setNewListing(res.data)
 	};
 

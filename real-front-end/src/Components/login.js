@@ -20,7 +20,7 @@ const Login = props => {
 			.post('/auth/login', credentials)
 			.then(res => {
 				sessionStorage.setItem('token', res.data.token);
-				props.history.push('/secure');
+				props.history.push('/secure/items-list');
 			})
 			.catch(err => {
 				console.error(err);
