@@ -1,30 +1,33 @@
 import React, { useState, useContext } from 'react';
+import { axiosWithAuth } from '../utils/axiosWithAuth';
 
 
 const AddItem = () => {
-	// const { rentals} = useContext(RenterContext);
 
-	const [newListing, setnewListing] = useState({
+	const [newListing, setNewListing] = useState({
 		Title:"",
 		Description:"",
-		Category:"",
-		SelectDate:"",
+		category_id:"",
+		// SelectDate:"",
 		PricePerHour:"",
-		PricePerDay:""
+		PricePerDay:"",
+		condition_id:""
 
 		// Image: ""
 	});
 
 	const handleChange = event => {
 		event.preventDefault();
-		// setAddRentals({...addRentals, [e.target.name]:e.target.value})
+		 setNewListing({...newListing, [event.target.name]:event.target.value})
 	};
 
 	const handleSubmit = event => {
 		event.preventDefault();
 		//post end point
-
-		// setRentals(res.data)
+		axiosWithAuth()
+		.post("https://ls-bwptpt-use-my-tech-stuff-2.herokuapp.com/api/stuff",newListing)
+		.then(res=> console.log("User response", res))
+		//  setNewListing(res.data)
 	};
 
 	return (
@@ -33,44 +36,52 @@ const AddItem = () => {
 				type='text'
 				name='Title'
 				placeholder='Title'
-				//   value{setAddRentals.id}
+				  value={newListing.Title}
 				onChange={handleChange}
 			/>
 			<input
 				type='text-area'
 				name='Description'
 				placeholder='Description'
-				//   value{setAddRentals.Title}
+				 value={newListing.Description}
 				onChange={handleChange}
 			/>
 			<input
 				type='text'
-				name='Category'
+				name='category_id'
 				placeholder='Category'
-				//   value{setAddRentals.Description}
+			   value={newListing.category_id}
 				onChange={handleChange}
 			/>
-			<input
+			{/* <input
 				type='date'
 				name='SelectDate'
 				placeholder='Select Date'
-				//   value{setAddRentals.PickupDate}
+				 value={setNewListing.PickupDate}
 				onChange={handleChange}
-			/>
+			/> */}
 			<input
 				type='text'
 				name='PricePerHour'
 				placeholder='Price'
-				//   value{setAddRentals.LastName}
+				 value={newListing.PricePerHour}
 				onChange={handleChange}
 			/>
 			<input
 				type='text'
 				name='PricePerDay'
 				placeholder='Price Per Day'
-				//   value{setAddRentals.Term}
+				value={newListing.PricePerDay}
 				onChange={handleChange}
 			/>
+			<input
+				type='text'
+				name='condition_id'
+				placeholder='conditionid'
+				value={newListing.condition_id}
+				onChange={handleChange}
+			/>
+			
 			
 
 			<button className="button" onClick={handleSubmit}> ADD LISTING</button>

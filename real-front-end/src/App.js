@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 import './App.css';
 
@@ -20,10 +20,15 @@ import ProductDate from './Components/ProductDate';
 import ProductThankYou from './Components/ProductThankYou';
 import Users from './utils/users';
 import Navbar from './Components/navbar';
+import { axiosWithAuth } from './utils/axiosWithAuth';
 
 function App() {
-	const [owner, setOwner] = useState([]);
-	const [rentals, setRentals] = useState([]);
+	const [user, setUser] = useState([])
+	// useEffect(()=>{
+	// 	axiosWithAuth()
+	// 	.get("https://ls-bwptpt-use-my-tech-stuff-2.herokuapp.com/api/users",user)
+	// })
+	
 
 	return (
 		// <div className='App'>
