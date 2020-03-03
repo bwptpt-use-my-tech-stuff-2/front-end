@@ -37,7 +37,7 @@ const SignUp = props => {
 				.then(res => {
 					console.log(res);
 					props.history.push('/login');
-					alert('Account created! Login below');
+					alert('You are now signed up, Login below');
 				})
 				.catch(err => {
 					console.error(err);
