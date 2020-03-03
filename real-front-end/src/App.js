@@ -20,6 +20,7 @@ import ProductDate from './Components/ProductDate';
 import ProductThankYou from './Components/ProductThankYou';
 import Users from './utils/users';
 import Navbar from './Components/navbar';
+import LandingPage from './Components/landingPage';
 
 function App() {
 	const [owner, setOwner] = useState([]);
@@ -41,20 +42,21 @@ function App() {
 		<div className='App'>
 			<Router>
 				<Switch>
-					<Route exact path='/' component={ItemsListed} />
+					<Route exact path='/' component={LandingPage} />
 					<Route path='/admin' component={Users} />
-					<Route path='/addItem' component={AddItem} />
 					<Route path='/edit-listing' component={EditListing} />
-					<Route exact path='/login' component={Login} />
+					<Route path='/login' component={Login} />
 					<Route path='/listing-options' component={ListingOptions} />
-					<Route path='/ProfilePage' component={ProfilePage} />
-					{/* <Route path='/ProductDate' component={ProductDate} /> */}
-					<Route path='/ProductPrice' component={ProductPrice} />
-					<Route path='/ProductThankYou' component={ProductThankYou} />
+					<Route path='/product-date' component={ProductDate} />
+					<Route path='/product-price' component={ProductPrice} />
+					<Route path='/product-thank-you' component={ProductThankYou} />
 					<Route exact path='/register' component={SignUp} />
 
 					<PrivateRoute>
 						<Route path='/secure' component={ProfilePage} />
+						<Route path='/secure/items-list' component={ItemsListed} />
+						<Route path='/secure/add-item' component={AddItem} />
+						<Route path='/secure/profile-page' component={ProfilePage} />
 					</PrivateRoute>
 				</Switch>
 				<Navbar />
