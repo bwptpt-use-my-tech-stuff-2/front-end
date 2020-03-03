@@ -7,11 +7,11 @@ const AddItem = () => {
 	const [newListing, setNewListing] = useState({
 		Title:"",
 		Description:"",
-		category_id:"",
+		category_id:1,
 		// SelectDate:"",
 		PricePerHour:"",
 		PricePerDay:"",
-		condition_id:""
+		condition_id:1
 
 		// Image: ""
 	});
@@ -20,6 +20,11 @@ const AddItem = () => {
 		event.preventDefault();
 		 setNewListing({...newListing, [event.target.name]:event.target.value})
 	};
+
+	const handleSelectChange= event=>{
+		event.preventDefault();
+		setNewListing({...newListing,category_id:event.target.value})
+	}
 
 	const handleSubmit = event => {
 		event.preventDefault();
@@ -46,13 +51,21 @@ const AddItem = () => {
 				 value={newListing.Description}
 				onChange={handleChange}
 			/>
-			<input
+			{/* <input
 				type='text'
 				name='category_id'
 				placeholder='Category'
 			   value={newListing.category_id}
 				onChange={handleChange}
-			/>
+			/> */}
+			<select name="category_id" onChange={handleChange} value={newListing.category_id}>
+				<option value="1">Camera</option>
+				<option value="2">Projector</option>
+				<option value="3">TV</option>
+				<option value="4">Instruments</option>
+				<option value="5">Party</option>
+				<option value="6">Other</option>
+			</select>
 			{/* <input
 				type='date'
 				name='SelectDate'
@@ -74,13 +87,21 @@ const AddItem = () => {
 				value={newListing.PricePerDay}
 				onChange={handleChange}
 			/>
-			<input
+			{/* <input
 				type='text'
 				name='condition_id'
 				placeholder='conditionid'
 				value={newListing.condition_id}
 				onChange={handleChange}
-			/>
+			/> */}
+			<select name="condition_id"  onChange={handleChange} value={newListing.condition_id} >
+				<option value="1">Mint</option>
+				<option value="2">New</option>
+				<option value="3">Good</option>
+				<option value="4">Fair</option>
+				<option value="5">Damaged</option>
+				<option value="6">Broken</option>
+			</select>
 			
 			
 
