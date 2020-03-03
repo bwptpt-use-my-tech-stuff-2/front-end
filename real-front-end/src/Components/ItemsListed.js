@@ -12,46 +12,16 @@ const StyledImg = styled.img`
 // const
 
 export default function ItemsListed() {
-
-  // const [itemInfo, setItemInfo] = useState([]); // All items
-  const {products,setProducts}=useContext(ProductContext)
+	// const [itemInfo, setItemInfo] = useState([]); // All items
+	const { products, setProducts } = useContext(ProductContext);
 
 	// Filtered Items
-	const [camera, setCamera] = useState([products]); // Category ID #1
-	const [projector, setProjector] = useState([]); // Category ID #2
-	const [tv, setTv] = useState([]); // Category ID #3
-	const [instrument, setInstrument] = useState([]); // Category ID #4
-	const [party, setParty] = useState([]); // Category ID #5
-	const [other, setOther] = useState([]); // Category ID #6
-
-
-  const FilterItems=(props)=>{
-    for (let i = 0; i < products.length; i++) {
-      // if (products[i].category_id === 1) {
-      //   setCamera(...camera, [products[i]]);
-      //   // console.log('camera', camera)
-      // }
-      if (products[i].category_id === 2) {
-        setProjector(...projector, [products[i]]);
-        // console.log('projector', projector)
-      }
-      if (products[i].category_id === 3) {
-        setTv(...tv, [products[i]]); // console.log('tv', tv)
-      }
-      if (products[i].category_id === 4) {
-        setInstrument(...instrument, [products[i]]); // console.log('instrument', instrument)
-      }
-      if (products[i].category_id === 5) {
-        setParty(...party, [products[i]]); // console.log('party', party)
-      }
-      if (products[i].category_id === 6) {
-        setOther(...other, [products[i]]); // console.log('other', other)
-      }
-    }
-
-  }
-  
-  // FilterItems(products)
+	const camera = products.filter(x => x.category_id === 1); // Category ID #1
+	const projector = products.filter(x => x.category_id === 2); // Category ID #2
+	const tv = products.filter(x => x.category_id === 3); // Category ID #3
+	const instrument = products.filter(x => x.category_id === 4); // Category ID #4
+	const party = products.filter(x => x.category_id === 5); // Category ID #5
+	const other = products.filter(x => x.category_id === 6); // Category ID #6
 
 	return (
 		<div className='container'>
