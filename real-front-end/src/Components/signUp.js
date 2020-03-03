@@ -60,7 +60,7 @@ const SignUp = props => {
 	`;
 
 	// Destructuring
-	const { FirstName, LastName, Email, Password } = credentials;
+	const { FirstName, LastName, Email, Password, Location } = credentials;
 	const { ConfirmPassword } = confirmPassword;
 
 	return (
@@ -80,6 +80,15 @@ const SignUp = props => {
 					type='text'
 					name='LastName'
 					value={LastName}
+					onChange={handleChange}
+					required
+				/>
+				<label>Location</label>
+				<input
+					type='text'
+					name='Location'
+					value={Location}
+					placeholder='ex. Atlanta, GA'
 					onChange={handleChange}
 					required
 				/>

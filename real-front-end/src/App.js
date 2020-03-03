@@ -62,7 +62,6 @@ function App() {
 						<Route path='/secure/admin' component={Users} />
 					</PrivateRoute>
 				</Switch>
-				<Navbar />
 			</Router>
 		</div>
 	);

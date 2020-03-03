@@ -11,12 +11,15 @@ const StyledImg = styled.img`
 // const
 
 export default function ItemsListed() {
-	const [itemInfo, setItemInfo] = useState([]);
+	const [itemInfo, setItemInfo] = useState([]); // All items
+
+	// Filtered Items
 	const [camera, setCamera] = useState([]); // Category ID #1
-	const [tv, setTv] = useState([]); // Category ID #2
-	const [instruments, setInstruments] = useState([]); // Category ID #3
-	const [party, setParty] = useState([]); // Category ID #4
-	const [other, setOther] = useState([]); // Category ID #5
+	const [projector, setProjector] = useState([]); // Category ID #2
+	const [tv, setTv] = useState([]); // Category ID #3
+	const [instrument, setInstrument] = useState([]); // Category ID #4
+	const [party, setParty] = useState([]); // Category ID #5
+	const [other, setOther] = useState([]); // Category ID #6
 
 	useEffect(() => {
 		axiosWithAuth()
@@ -30,15 +33,19 @@ export default function ItemsListed() {
 						// console.log('camera', camera)
 					}
 					if (response.data[i].category_id === 2) {
-						setTv(...tv, [response.data[i]]); // console.log('tv', tv)
+						setProjector(...projector, [response.data[i]]);
+						// console.log('projector', projector)
 					}
 					if (response.data[i].category_id === 3) {
-						setInstruments(...instruments, [response.data[i]]); // console.log('instrument', instrument)
+						setTv(...tv, [response.data[i]]); // console.log('tv', tv)
 					}
 					if (response.data[i].category_id === 4) {
-						setParty(...party, [response.data[i]]); // console.log('party', party)
+						setInstrument(...instrument, [response.data[i]]); // console.log('instrument', instrument)
 					}
 					if (response.data[i].category_id === 5) {
+						setParty(...party, [response.data[i]]); // console.log('party', party)
+					}
+					if (response.data[i].category_id === 6) {
 						setOther(...other, [response.data[i]]); // console.log('other', other)
 					}
 				}
@@ -53,13 +60,12 @@ export default function ItemsListed() {
 			<div className='title-container'>
 				<h1>Discover Products</h1>
 			</div>
-
 			<div className='content-container'>
+				{/* Camera Section */}
 				<div className='camera-content'>
 					<div className='camera-title'>
 						<h2>Cameras</h2>
 					</div>
-
 					{camera.map(item => {
 						return (
 							<div className='camera-card'>
@@ -72,11 +78,28 @@ export default function ItemsListed() {
 					})}
 				</div>
 
+				{/* Projector Section */}
+				<div className='projector-content'>
+					<div className='projector-title'>
+						<h2>Projectors</h2>
+					</div>
+					{projector.map(item => {
+						return (
+							<div className='projector-card'>
+								<StyledImg src={item.ImagePath} alt='projector'></StyledImg>
+								<h3>{item.Title}</h3>
+								<p>${item.PricePerHour}/hr</p>
+								{/* {console.log("item", item)} */}
+							</div>
+						);
+					})}
+				</div>
+
+				{/* TV Section */}
 				<div className='tv-content'>
 					<div className='tv-title'>
 						<h2>Tv's</h2>
 					</div>
-
 					{tv.map(item => {
 						return (
 							<div className='tv-card'>
@@ -89,12 +112,12 @@ export default function ItemsListed() {
 					})}
 				</div>
 
+				{/* Instruments Section */}
 				<div className='instruments-content'>
 					<div className='instruments-title'>
 						<h2>Instruments</h2>
 					</div>
-
-					{instruments.map(item => {
+					{instrument.map(item => {
 						return (
 							<div className='instruments-card'>
 								<StyledImg src={item.ImagePath} alt='instruments'></StyledImg>
@@ -106,15 +129,15 @@ export default function ItemsListed() {
 					})}
 				</div>
 
+				{/* Party Section */}
 				<div className='party-content'>
 					<div className='party-title'>
 						<h2>Party</h2>
 					</div>
-
 					{party.map(item => {
 						return (
 							<div className='party-card'>
-								<StyledImg src={item.ImagePath} alt='party'></StyledImg>
+								<StyledImg src={item.ImagePath} alt='party equipment'></StyledImg>
 								<h3>{item.Title}</h3>
 								<p>${item.PricePerHour}/hr</p>
 								{/* {console.log("item", item)} */}
@@ -123,15 +146,15 @@ export default function ItemsListed() {
 					})}
 				</div>
 
+				{/* Other Section */}
 				<div className='other-content'>
 					<div className='other-title'>
 						<h2>Other</h2>
 					</div>
-
 					{other.map(item => {
 						return (
 							<div className='other-card'>
-								<StyledImg src={item.ImagePath} alt='other'></StyledImg>
+								<StyledImg src={item.ImagePath} alt='tech equipment'></StyledImg>
 								<h3>{item.Title}</h3>
 								<p>${item.PricePerHour}/hr</p>
 								{/* {console.log("item", item)} */}
