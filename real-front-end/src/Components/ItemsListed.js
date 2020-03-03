@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import { axiosWithAuth } from '../utils/axiosWithAuth';
 import Navbar from './navbar';
 import styled from 'styled-components';
+import { ProductContext } from '../Context/ProductContext';
 
 const StyledImg = styled.img`
 	width: 200px;
@@ -11,49 +12,46 @@ const StyledImg = styled.img`
 // const
 
 export default function ItemsListed() {
-	const [itemInfo, setItemInfo] = useState([]); // All items
+
+  // const [itemInfo, setItemInfo] = useState([]); // All items
+  const {products,setProducts}=useContext(ProductContext)
 
 	// Filtered Items
-	const [camera, setCamera] = useState([]); // Category ID #1
+	const [camera, setCamera] = useState([products]); // Category ID #1
 	const [projector, setProjector] = useState([]); // Category ID #2
 	const [tv, setTv] = useState([]); // Category ID #3
 	const [instrument, setInstrument] = useState([]); // Category ID #4
 	const [party, setParty] = useState([]); // Category ID #5
 	const [other, setOther] = useState([]); // Category ID #6
 
-	useEffect(() => {
-		axiosWithAuth()
-			.get('https://ls-bwptpt-use-my-tech-stuff-2.herokuapp.com/api/stuff')
-			.then(response => {
-				setItemInfo(response.data);
-				// console.log(itemInfo);
-				for (let i = 0; i < response.data.length; i++) {
-					if (response.data[i].category_id === 1) {
-						setCamera(...camera, [response.data[i]]);
-						// console.log('camera', camera)
-					}
-					if (response.data[i].category_id === 2) {
-						setProjector(...projector, [response.data[i]]);
-						// console.log('projector', projector)
-					}
-					if (response.data[i].category_id === 3) {
-						setTv(...tv, [response.data[i]]); // console.log('tv', tv)
-					}
-					if (response.data[i].category_id === 4) {
-						setInstrument(...instrument, [response.data[i]]); // console.log('instrument', instrument)
-					}
-					if (response.data[i].category_id === 5) {
-						setParty(...party, [response.data[i]]); // console.log('party', party)
-					}
-					if (response.data[i].category_id === 6) {
-						setOther(...other, [response.data[i]]); // console.log('other', other)
-					}
-				}
-			})
-			.catch(error => {
-				console.log('Error!', error);
-			});
-	}, []);
+
+  const FilterItems=(props)=>{
+    for (let i = 0; i < products.length; i++) {
+      // if (products[i].category_id === 1) {
+      //   setCamera(...camera, [products[i]]);
+      //   // console.log('camera', camera)
+      // }
+      if (products[i].category_id === 2) {
+        setProjector(...projector, [products[i]]);
+        // console.log('projector', projector)
+      }
+      if (products[i].category_id === 3) {
+        setTv(...tv, [products[i]]); // console.log('tv', tv)
+      }
+      if (products[i].category_id === 4) {
+        setInstrument(...instrument, [products[i]]); // console.log('instrument', instrument)
+      }
+      if (products[i].category_id === 5) {
+        setParty(...party, [products[i]]); // console.log('party', party)
+      }
+      if (products[i].category_id === 6) {
+        setOther(...other, [products[i]]); // console.log('other', other)
+      }
+    }
+
+  }
+  
+  // FilterItems(products)
 
 	return (
 		<div className='container'>

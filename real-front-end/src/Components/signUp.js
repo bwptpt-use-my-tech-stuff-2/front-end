@@ -2,7 +2,7 @@ import React, { useState, useContext } from 'react';
 import Styled from 'styled-components';
 import { axiosWithAuth } from '../utils/axiosWithAuth';
 import { UserContext } from '../Context/UserContext';
-import { RenterContext } from '../Context/RenterContext';
+import { RenterContext } from '../Context/ProductContext';
 
 const SignUp = props => {
 	// const { owner } = useContext(UserContext);
