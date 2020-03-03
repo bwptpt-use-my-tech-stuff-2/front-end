@@ -19,7 +19,7 @@ const LandingPage = () => {
 				<p className='text'>You get to choose the day and time that works for you.</p>
 			</div>
 			<div className='links-container'>
-				<Link to='/register'>
+				<Link to='/sign-up'>
 					<button className='link'>Sign up</button>
 				</Link>
 				<Link to='/login'>
