@@ -43,7 +43,6 @@ function App() {
 			<Router>
 				<Switch>
 					<Route exact path='/' component={LandingPage} />
-					<Route path='/admin' component={Users} />
 					<Route path='/edit-listing' component={EditListing} />
 					<Route path='/login' component={Login} />
 					<Route path='/listing-options' component={ListingOptions} />
@@ -54,9 +53,10 @@ function App() {
 
 					<PrivateRoute>
 						<Route path='/secure' component={ProfilePage} />
-						<Route path='/secure/items-list' component={ItemsListed} />
-						<Route path='/secure/add-item' component={AddItem} />
-						<Route path='/secure/profile-page' component={ProfilePage} />
+						<Route exact path='/secure/items-list' component={ItemsListed} />
+						<Route exact path='/secure/add-item' component={AddItem} />
+						<Route exact path='/secure/profile-page' component={ProfilePage} />
+						<Route exact path='/secure/admin' component={Users} />
 					</PrivateRoute>
 				</Switch>
 				<Navbar />
