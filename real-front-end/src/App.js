@@ -49,14 +49,14 @@ function App() {
 					<Route path='/product-date' component={ProductDate} />
 					<Route path='/product-price' component={ProductPrice} />
 					<Route path='/product-thank-you' component={ProductThankYou} />
-					<Route exact path='/register' component={SignUp} />
+					<Route path='/register' component={SignUp} />
 
 					<PrivateRoute>
-						<Route path='/secure' component={ProfilePage} />
-						<Route exact path='/secure/items-list' component={ItemsListed} />
-						<Route exact path='/secure/add-item' component={AddItem} />
-						<Route exact path='/secure/profile-page' component={ProfilePage} />
-						<Route exact path='/secure/admin' component={Users} />
+						<Route exact path='/secure' component={ProfilePage} />
+						<Route path='/secure/items-list' component={ItemsListed} />
+						<Route path='/secure/add-item' component={AddItem} />
+						<Route path='/secure/profile-page' component={ProfilePage} />
+						<Route path='/secure/admin' component={Users} />
 					</PrivateRoute>
 				</Switch>
 				<Navbar />
