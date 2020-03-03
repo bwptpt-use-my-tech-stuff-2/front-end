@@ -56,7 +56,7 @@ function App() {
 						<Route exact path='/secure/items-list' component={ItemsListed} />
 						<Route exact path='/secure/add-item' component={AddItem} />
 						<Route exact path='/secure/profile-page' component={ProfilePage} />
-						<Route path='/secure/admin' component={Users} />
+						<Route exact path='/secure/admin' component={Users} />
 					</PrivateRoute>
 				</Switch>
 				<Navbar />
