@@ -21,6 +21,7 @@ import ProductThankYou from './Components/ProductThankYou';
 import Users from './utils/users';
 import Navbar from './Components/navbar';
 import LandingPage from './Components/landingPage';
+import SignUpOptions from './Components/signUpOptions';
 
 function App() {
 	const [user, setUser] = useState([])
@@ -47,13 +48,15 @@ function App() {
 			<Router>
 				<Switch>
 					<Route exact path='/' component={LandingPage} />
+					<Route path='/sign-up' component={SignUpOptions} />
+					<Route path='/register' component={SignUp} />
+
 					<Route path='/edit-listing' component={EditListing} />
 					<Route path='/login' component={Login} />
 					<Route path='/listing-options' component={ListingOptions} />
 					<Route path='/product-date' component={ProductDate} />
 					<Route path='/product-price' component={ProductPrice} />
 					<Route path='/product-thank-you' component={ProductThankYou} />
-					<Route path='/register' component={SignUp} />
 
 					<PrivateRoute>
 						<Route exact path='/secure' component={ProfilePage} />
@@ -63,7 +66,6 @@ function App() {
 						<Route path='/secure/admin' component={Users} />
 					</PrivateRoute>
 				</Switch>
-				<Navbar />
 			</Router>
 		</div>
 	);
