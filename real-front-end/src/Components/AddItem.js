@@ -1,8 +1,9 @@
 import React, { useState, useContext } from 'react';
 import { axiosWithAuth } from '../utils/axiosWithAuth';
 import Navbar from './navbar';
-
-const AddItem = () => {
+import {ProductContext} from "../Context/ProductContext"
+const AddItem = (props) => {
+	  const {products, setProducts}=useContext(ProductContext)
 	const [newListing, setNewListing] = useState({
 		Title: '',
 		Description: '',
@@ -30,8 +31,13 @@ const AddItem = () => {
 		//post end point
 		axiosWithAuth()
 			.post('https://ls-bwptpt-use-my-tech-stuff-2.herokuapp.com/api/stuff', newListing)
-			.then(res => console.log('User response', res.data));
+			.then(res => {
+				console.log('User response', res.data);
 		//  setNewListing(res.data)
+			setProducts([...products,res.data])
+			 props.history.push("/secure/items-list")
+			})
+		
 	};
 
 	return (
