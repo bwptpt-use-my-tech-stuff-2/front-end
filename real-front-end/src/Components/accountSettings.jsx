@@ -1,8 +1,8 @@
 import React, { useContext, useState, useEffect } from 'react';
-import { axiosWithAuth } from './axiosWithAuth';
+import { axiosWithAuth } from '../utils/axiosWithAuth';
 import { UserContext } from '../Context/UserContext';
 
-const MyProfile = props => {
+const AccountSettings = props => {
 	const { user, setUser } = useContext(UserContext);
 
 	const [credentials, setCredentials] = useState({
@@ -19,15 +19,21 @@ const MyProfile = props => {
 	useEffect(() => {
 		// if (loggedIn !== false) {
 		axiosWithAuth()
-			.get('https://ls-bwptpt-use-my-tech-stuff-2.herokuapp.com/api/users')
+			.get(`https://ls-bwptpt-use-my-tech-stuff-2.herokuapp.com/api/users/${user}`)
 			.then(res => {
 				console.log(res);
+				setCredentials({
+					Email: res.data.Email,
+					FirstName: res.data.FirstName,
+					LastName: res.data.LastName,
+					Location: res.data.Location
+				});
 			})
 			.catch(err => {
 				console.error(err);
 			});
 		// }
-	});
+	}, []);
 
 	const handleChange = e => {
 		e.preventDefault();
@@ -54,11 +60,14 @@ const MyProfile = props => {
 		e.preventDefault();
 		if (credentials.Password === confirmPassword.ConfirmPassword) {
 			axiosWithAuth()
-				.put(`/users/`, credentials)
+				.put(
+					`https://ls-bwptpt-use-my-tech-stuff-2.herokuapp.com/api/users/${user}`,
+					credentials
+				)
 				.then(res => {
 					console.log(res);
 					props.history.push('/login');
-					alert('You are now signed up, Login below');
+					alert('Changes saved, Login below');
 				})
 				.catch(err => {
 					console.error(err);
@@ -135,4 +144,4 @@ const MyProfile = props => {
 	);
 };
 
-export default MyProfile;
+export default AccountSettings;
