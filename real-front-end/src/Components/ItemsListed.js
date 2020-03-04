@@ -1,59 +1,36 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import { axiosWithAuth } from '../utils/axiosWithAuth';
 import Navbar from './navbar';
 import styled from 'styled-components';
+import { ProductContext } from '../Context/ProductContext';
 
 const StyledImg = styled.img`
 	width: 200px;
 	border-radius: 8px 8px 0px 0px;
 `;
 
-// const
-
 export default function ItemsListed() {
-	const [itemInfo, setItemInfo] = useState([]); // All items
-
-	// Filtered Items
-	const [camera, setCamera] = useState([]); // Category ID #1
-	const [projector, setProjector] = useState([]); // Category ID #2
-	const [tv, setTv] = useState([]); // Category ID #3
-	const [instrument, setInstrument] = useState([]); // Category ID #4
-	const [party, setParty] = useState([]); // Category ID #5
-	const [other, setOther] = useState([]); // Category ID #6
-
+	// const { loggedIn, setLoggedIn } = useContext(LoggedInContext);
 	useEffect(() => {
+		// if (loggedIn !== false) {
 		axiosWithAuth()
 			.get('https://ls-bwptpt-use-my-tech-stuff-2.herokuapp.com/api/stuff')
-			.then(response => {
-				setItemInfo(response.data);
-				// console.log(itemInfo);
-				for (let i = 0; i < response.data.length; i++) {
-					if (response.data[i].category_id === 1) {
-						setCamera(...camera, [response.data[i]]);
-						// console.log('camera', camera)
-					}
-					if (response.data[i].category_id === 2) {
-						setProjector(...projector, [response.data[i]]);
-						// console.log('projector', projector)
-					}
-					if (response.data[i].category_id === 3) {
-						setTv(...tv, [response.data[i]]); // console.log('tv', tv)
-					}
-					if (response.data[i].category_id === 4) {
-						setInstrument(...instrument, [response.data[i]]); // console.log('instrument', instrument)
-					}
-					if (response.data[i].category_id === 5) {
-						setParty(...party, [response.data[i]]); // console.log('party', party)
-					}
-					if (response.data[i].category_id === 6) {
-						setOther(...other, [response.data[i]]); // console.log('other', other)
-					}
-				}
-			})
-			.catch(error => {
-				console.log('Error!', error);
+			.then(res => {
+				console.log('response', res.data);
+				setProducts(res.data);
 			});
+		// }
 	}, []);
+	// const [itemInfo, setItemInfo] = useState([]); // All items
+	const { products, setProducts } = useContext(ProductContext);
+
+	// Filtered Items
+	const camera = products.filter(x => x.category_id === 1); // Category ID #1
+	const projector = products.filter(x => x.category_id === 2); // Category ID #2
+	const tv = products.filter(x => x.category_id === 3); // Category ID #3
+	const instrument = products.filter(x => x.category_id === 4); // Category ID #4
+	const party = products.filter(x => x.category_id === 5); // Category ID #5
+	const other = products.filter(x => x.category_id === 6); // Category ID #6
 
 	return (
 		<div className='container'>

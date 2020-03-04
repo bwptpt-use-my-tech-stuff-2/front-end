@@ -1,11 +1,9 @@
-import React, { useState, useContext } from 'react';
-import Styled from 'styled-components';
-import { axiosWithAuth } from '../utils/axiosWithAuth';
+import React, { useContext, useState, useEffect } from 'react';
+import { axiosWithAuth } from './axiosWithAuth';
 import { UserContext } from '../Context/UserContext';
-import { RenterContext } from '../Context/ProductContext';
 
-const SignUp = props => {
-	// const { owner } = useContext(UserContext);
+const MyProfile = props => {
+	const { user, setUser } = useContext(UserContext);
 
 	const [credentials, setCredentials] = useState({
 		Email: '',
@@ -18,7 +16,19 @@ const SignUp = props => {
 		ConfirmPassword: ''
 	});
 
-	// Functions
+	useEffect(() => {
+		// if (loggedIn !== false) {
+		axiosWithAuth()
+			.get('https://ls-bwptpt-use-my-tech-stuff-2.herokuapp.com/api/users')
+			.then(res => {
+				console.log(res);
+			})
+			.catch(err => {
+				console.error(err);
+			});
+		// }
+	});
+
 	const handleChange = e => {
 		e.preventDefault();
 		setCredentials({ ...credentials, [e.target.name]: e.target.value });
@@ -29,11 +39,22 @@ const SignUp = props => {
 		setConfirmPassword({ ...confirmPassword, [e.target.name]: e.target.value });
 	};
 
+	// const handleGetUsers = () => {
+	// 	axiosWithAuth()
+	// 		.get('https://ls-bwptpt-use-my-tech-stuff-2.herokuapp.com/api/users')
+	// 		.then(res => {
+	// 			console.log(res);
+	// 		})
+	// 		.catch(err => {
+	// 			console.error(err);
+	// 		});
+	// };
+
 	const handleSubmit = e => {
 		e.preventDefault();
 		if (credentials.Password === confirmPassword.ConfirmPassword) {
 			axiosWithAuth()
-				.post('/auth/register', credentials)
+				.put(`/users/`, credentials)
 				.then(res => {
 					console.log(res);
 					props.history.push('/login');
@@ -45,19 +66,17 @@ const SignUp = props => {
 		} else alert('Passwords do not match!!');
 	};
 
-	// Styled Components
-	const Title = Styled.h1`
-		position: absolute;
-		left: 0%;
-		right: 0%;
-		top: 0%;
-		bottom: 5.26%;
-		font-family: SF Pro Text;
-		font-style: normal;
-		font-weight: bold;
-		font-size: 30px;
-		line-height: 36px;
-	`;
+	const handleDeleteUser = id => {
+		axiosWithAuth()
+			.delete(`https://ls-bwptpt-use-my-tech-stuff-2.herokuapp.com/api/users/${user}`)
+			.then(res => {
+				sessionStorage.removeItem('token');
+				props.history.push('/login');
+			})
+			.catch(err => {
+				console.log(err);
+			});
+	};
 
 	// Destructuring
 	const { FirstName, LastName, Email, Password, Location } = credentials;
@@ -65,7 +84,6 @@ const SignUp = props => {
 
 	return (
 		<div>
-			<h1 className='title'>Sign up with email</h1>
 			<form onSubmit={handleSubmit}>
 				<label>First name</label>
 				<input
@@ -110,10 +128,11 @@ const SignUp = props => {
 					onChange={handleChangePassword}
 					required
 				/>
-				<button onClick={handleSubmit}>Submit</button>
+				<button onClick={handleSubmit}>Save Changes</button>
 			</form>
+			<button onClick={handleDeleteUser}>Delete Account</button>
 		</div>
 	);
 };
 
-export default SignUp;
+export default MyProfile;
