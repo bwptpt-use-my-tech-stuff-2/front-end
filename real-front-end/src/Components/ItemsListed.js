@@ -23,7 +23,9 @@ export default function ItemsListed() {
 	}, []);
 	// const [itemInfo, setItemInfo] = useState([]); // All items
 	const { products, setProducts } = useContext(ProductContext);
+ 
 
+  console.log("this is products",products)
 	// Filtered Items
 	const camera = products.filter(x => x.category_id === 1); // Category ID #1
 	const projector = products.filter(x => x.category_id === 2); // Category ID #2
