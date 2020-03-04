@@ -9,9 +9,18 @@ const StyledImg = styled.img`
 	border-radius: 8px 8px 0px 0px;
 `;
 
-// const
-
 export default function ItemsListed() {
+	// const { loggedIn, setLoggedIn } = useContext(LoggedInContext);
+	useEffect(() => {
+		// if (loggedIn !== false) {
+		axiosWithAuth()
+			.get('https://ls-bwptpt-use-my-tech-stuff-2.herokuapp.com/api/stuff')
+			.then(res => {
+				console.log('response', res.data);
+				setProducts(res.data);
+			});
+		// }
+	}, []);
 	// const [itemInfo, setItemInfo] = useState([]); // All items
 	const { products, setProducts } = useContext(ProductContext);
 
