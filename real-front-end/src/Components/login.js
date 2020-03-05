@@ -2,7 +2,11 @@ import React, { useState, useContext } from 'react';
 import { axiosWithAuth } from '../utils/axiosWithAuth';
 import axios from 'axios';
 import { UserContext } from '../Context/UserContext';
-// import Styled from 'styled-components';
+import styled from 'styled-components';
+
+
+
+import { StyledContainer, SignInSignInButton, StyledInput, SignInH1, StyledLabelSpan } from './Styles';
 
 const Login = props => {
 	// const { loggedIn, setLoggedIn } = useContext(LoggedInContext);
@@ -35,31 +39,32 @@ const Login = props => {
 	const { Email, Password } = credentials;
 
 	return (
-		<div className='signInForm'>
-			<form onSubmit={handleSubmit}>
-				<label>
-					Email Address
-					<input
-						type='email'
-						name='Email'
-						value={Email}
-						required
-						onChange={handleChange}
-					/>
-				</label>
-				<label>
-					Password
-					<input
-						required
-						type='password'
-						name='Password'
-						value={Password}
-						onChange={handleChange}
-					/>
-				</label>
-				<button onClick={handleSubmit}>Sign In</button>
-			</form>
-		</div>
+		<StyledContainer className='signInForm'>
+			<SignInH1>Sign in</SignInH1>
+				<form onSubmit={handleSubmit}>
+					<label>
+						<StyledLabelSpan>Email Address</StyledLabelSpan>
+						<StyledInput
+							type='email'
+							name='Email'
+							value={Email}
+							required
+							onChange={handleChange}
+						/>
+					</label>
+					<label>
+						Password
+						<StyledInput
+							required
+							type='password'
+							name='Password'
+							value={Password}
+							onChange={handleChange}
+						/>
+					</label>
+					<SignInSignInButton onClick={handleSubmit}>Sign In</SignInSignInButton>
+				</form>
+		</StyledContainer>
 	);
 };
 
