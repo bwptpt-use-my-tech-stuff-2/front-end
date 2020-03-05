@@ -2,8 +2,10 @@ import React, { useState, useContext } from 'react';
 import { axiosWithAuth } from '../utils/axiosWithAuth';
 import Navbar from './navbar';
 import {ProductContext} from "../Context/ProductContext"
+
 const AddItem = (props) => {
 	  const {products, setProducts}=useContext(ProductContext)
+	 
 	const [newListing, setNewListing] = useState({
 		Title: '',
 		Description: '',
@@ -11,9 +13,8 @@ const AddItem = (props) => {
 		// SelectDate:"",
 		PricePerHour: '',
 		PricePerDay: '',
-		condition_id: 1
-
-		// Image: ""
+		condition_id: 1,
+		ImagePath:""
 	});
 
 	const handleChange = event => {
@@ -116,7 +117,13 @@ const AddItem = (props) => {
 					<option value='5'>Damaged</option>
 					<option value='6'>Broken</option>
 				</select>
-
+                 <input
+				  type ="url"
+				  placeholder="Enter your image url"
+				  name="ImagePath"
+				  value={newListing.ImagePath}
+				  onChange={handleChange}
+				  />
 				<button className='button' onClick={handleSubmit}>
 					{' '}
 					ADD LISTING

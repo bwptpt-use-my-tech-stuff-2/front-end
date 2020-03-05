@@ -36,6 +36,7 @@ const SignUp = props => {
 				.post('/auth/register', credentials)
 				.then(res => {
 					console.log(res);
+					console.log(res.status);
 					props.history.push('/login');
 					alert('You are now signed up, Login below');
 				})
