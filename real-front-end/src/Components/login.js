@@ -24,6 +24,8 @@ const Login = props => {
 	const handleSubmit = e => {
 		e.preventDefault();
 		axiosWithAuth()
+		// 'https://cors-anywhere.herokuapp.com/https://ls-bwptpt-use-my-tech-stuff-2.herokuapp.com/api // For COARS 
+
 			.post('/auth/login', credentials)
 			.then(res => {
 				sessionStorage.setItem('token', res.data.token);

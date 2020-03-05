@@ -7,7 +7,8 @@ const ProfilePage = () => {
 		<div>
 			<div className='icon-container'>
 				<div className='nav-link'>
-					<Link to='/secure/my-profile'> My profile </Link>
+					<Link to='/secure/account-settings'> My Account Settings </Link>
+					{/* <Link to='/secure/user'> get users </Link> */}
 				</div>
 			</div>
 			<div className='title-container'>
