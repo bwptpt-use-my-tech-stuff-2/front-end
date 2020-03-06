@@ -5,7 +5,10 @@ const Navbar = () => {
 	return (
 		<div className='container'>
 			<div className='nav-link'>
-				<Link to='/secure/items-list'> Home </Link>
+				<div>
+					<i className='fa fa-home' aria-hidden='true'></i>
+					<Link to='/secure/items-list'>Home</Link>
+				</div>
 
 				<Link to='/secure/add-item'> AddItem</Link>
 
