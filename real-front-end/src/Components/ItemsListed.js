@@ -9,7 +9,7 @@ const StyledImg = styled.img`
 	border-radius: 8px 8px 0px 0px;
 `;
 
-export default function ItemsListed() {
+export default function ItemsListed({history}) {
 	// const { loggedIn, setLoggedIn } = useContext(LoggedInContext);
 	useEffect(() => {
 		// if (loggedIn !== false) {
@@ -33,7 +33,12 @@ export default function ItemsListed() {
 	const instrument = products.filter(x => x.category_id === 4); // Category ID #4
 	const party = products.filter(x => x.category_id === 5); // Category ID #5
 	const other = products.filter(x => x.category_id === 6); // Category ID #6
-
+	 
+	const handleRentals =id=>{
+     
+		console.log("ID" ,id)
+     history.push(`/product-rent/${id}`)
+	}
 	return (
 		<div className='container'>
 			<div className='title-container'>
@@ -52,6 +57,7 @@ export default function ItemsListed() {
 								<h3>{item.Title}</h3>
 								<p>${item.PricePerHour}/hr</p>
 								{/* {console.log("item", item)} */}
+								<button onClick ={()=>handleRentals(item.id)} >Rent Item</button>
 							</div>
 						);
 					})}
@@ -69,6 +75,7 @@ export default function ItemsListed() {
 								<h3>{item.Title}</h3>
 								<p>${item.PricePerHour}/hr</p>
 								{/* {console.log("item", item)} */}
+								<button onClick ={()=>handleRentals(item.id)} >Rent Item</button>
 							</div>
 						);
 					})}
@@ -86,6 +93,7 @@ export default function ItemsListed() {
 								<h3>{item.Title}</h3>
 								<p>${item.PricePerHour}/hr</p>
 								{/* {console.log("item", item)} */}
+								<button onClick ={()=>handleRentals(item.id)} >Rent Item</button>
 							</div>
 						);
 					})}
@@ -103,6 +111,7 @@ export default function ItemsListed() {
 								<h3>{item.Title}</h3>
 								<p>${item.PricePerHour}/hr</p>
 								{/* {console.log("item", item)} */}
+								<button onClick ={()=>handleRentals(item.id)} >Rent Item</button>
 							</div>
 						);
 					})}
@@ -120,6 +129,7 @@ export default function ItemsListed() {
 								<h3>{item.Title}</h3>
 								<p>${item.PricePerHour}/hr</p>
 								{/* {console.log("item", item)} */}
+								<button onClick ={()=>handleRentals(item.id)} >Rent Item</button>
 							</div>
 						);
 					})}
@@ -137,6 +147,7 @@ export default function ItemsListed() {
 								<h3>{item.Title}</h3>
 								<p>${item.PricePerHour}/hr</p>
 								{/* {console.log("item", item)} */}
+								<button onClick ={()=>handleRentals(item.id)} >Rent Item</button>
 							</div>
 						);
 					})}
