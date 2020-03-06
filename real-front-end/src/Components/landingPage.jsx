@@ -1,32 +1,36 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import styled from 'styled-components';
+
+import { LandingStyledContainer, UniversalH1, UniversalH2, UniversalH3, UniversalP, LandingSignUpButton, LandingSignInButton, LandingButtonDiv, MissionStatementContainer } from './Styles';
 
 const LandingPage = () => {
 	return (
-		<div>
+		<LandingStyledContainer>
 			<div className='title'>
-				<h1>Use My Tech Stuff</h1>
+				<UniversalH1>Use My Tech Stuff</UniversalH1>
 			</div>
 			<div className='mission-statement'>
-				<h2>
-					<span>Let your tech make you money</span> or save money by renting locally
-				</h2>
+				<MissionStatementContainer>
+					<UniversalH2>Let your tech make you money</UniversalH2> 
+					<UniversalH3>or save money by renting locally</UniversalH3>
+				</MissionStatementContainer>
 			</div>
 			<div className='container'>
-				<h2 className='sub-heading'>Why you'll love us</h2>
-				<p className='text'>We help you save money by renting tech equipment locally.</p>
-				<p className='text'>We offer safe and secure handling.</p>
-				<p className='text'>You get to choose the day and time that works for you.</p>
+				<UniversalH3 className='sub-heading'>Why you'll love us &#10084;</UniversalH3>
+				<UniversalP className='text'>We help you save money by renting tech equipment locally.</UniversalP>
+				<UniversalP className='text'>We offer safe and secure handling.</UniversalP>
+				<UniversalP className='text'>You get to choose the day and time that works for you.</UniversalP>
 			</div>
-			<div className='links-container'>
+			<LandingButtonDiv className='links-container'>
 				<Link to='/sign-up'>
-					<button className='link'>Sign up</button>
+					<LandingSignUpButton className='link'>Sign up</LandingSignUpButton>
 				</Link>
 				<Link to='/login'>
-					<button className='link'>Sign in</button>
+					<LandingSignInButton className='link'>Sign in</LandingSignInButton>
 				</Link>
-			</div>
-		</div>
+			</LandingButtonDiv>
+		</LandingStyledContainer>
 	);
 };
 
