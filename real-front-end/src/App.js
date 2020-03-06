@@ -18,7 +18,7 @@ import ProfilePage from './Components/ProfilePage';
 // import MyListing from './Components/myListing/MyListing';
 import EditListing from './Components/myListing/editListing';
 import ListingOptions from './Components/myListing/listingOptions';
-// import ProductRent from './Components/ProductRent';
+import ProductRent from './Components/ProductRent';
 import ProductPrice from './Components/ProductPrice';
 import ProductDate from './Components/ProductDate';
 import ProductThankYou from './Components/ProductThankYou';
@@ -47,6 +47,8 @@ function App() {
 							<Route path='/product-date' component={ProductDate} />
 							<Route path='/product-price' component={ProductPrice} />
 							<Route path='/product-thank-you' component={ProductThankYou} />
+							<Route path='/product-rent/:id' component={ProductRent} />
+
 
 							<PrivateRoute>
 								<Route exact path='/secure' component={ProfilePage} />
