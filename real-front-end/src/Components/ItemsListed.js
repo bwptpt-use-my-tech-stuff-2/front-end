@@ -76,93 +76,93 @@ export default function ItemsListed({history}) {
 
 				{/* Projector Section */}
 				<div className='projector-title'>
-					<h2>Projectors</h2>
+					<ItemsListedH2>Projectors</ItemsListedH2>
 				</div>
-				<div className='projector-content'>
+				<ContentCard className='projector-content'>
 					{projector.map(item => {
 						return (
 							<div className='projector-card'>
 								<StyledImg src={item.ImagePath} alt='projector'></StyledImg>
-								<h3>{item.Title}</h3>
-								<p>${item.PricePerHour}/hr</p>
+								<ItemsListedH3>{item.Title}</ItemsListedH3>
+								<ItemsListedP>${item.PricePerHour}/hr</ItemsListedP>
 								{/* {console.log("item", item)} */}
-								<button onClick ={()=>handleRentals(item.id)} >Rent Item</button>
+								<ItemListRentButton onClick ={()=>handleRentals(item.id)} >Rent Item</ItemListRentButton>
 							</div>
 						);
 					})}
-				</div>
+				</ContentCard>
 
 				{/* TV Section */}
 				<div className='tv-title'>
-					<h2>Tv's</h2>
+					<ItemsListedH2>Tv's</ItemsListedH2>
 				</div>
-				<div className='tv-content'>
+				<ContentCard className='tv-content'>
 					{tv.map(item => {
 						return (
 							<div className='tv-card'>
 								<StyledImg src={item.ImagePath} alt='tv'></StyledImg>
-								<h3>{item.Title}</h3>
-								<p>${item.PricePerHour}/hr</p>
+								<ItemsListedH3>{item.Title}</ItemsListedH3>
+								<ItemsListedP>${item.PricePerHour}/hr</ItemsListedP>
 								{/* {console.log("item", item)} */}
-								<button onClick ={()=>handleRentals(item.id)} >Rent Item</button>
+								<ItemListRentButton onClick ={()=>handleRentals(item.id)} >Rent Item</ItemListRentButton>
 							</div>
 						);
 					})}
-				</div>
+				</ContentCard>
 
 				{/* Instruments Section */}
 				<div className='instruments-title'>
-					<h2>Instruments</h2>
+					<ItemsListedH2>Instruments</ItemsListedH2>
 				</div>
-				<div className='instruments-content'>
+				<ContentCard className='instruments-content'>
 					{instrument.map(item => {
 						return (
 							<div className='instruments-card'>
 								<StyledImg src={item.ImagePath} alt='instruments'></StyledImg>
-								<h3>{item.Title}</h3>
-								<p>${item.PricePerHour}/hr</p>
+								<ItemsListedH3>{item.Title}</ItemsListedH3>
+								<ItemsListedP>${item.PricePerHour}/hr</ItemsListedP>
 								{/* {console.log("item", item)} */}
-								<button onClick ={()=>handleRentals(item.id)} >Rent Item</button>
+								<ItemListRentButton onClick ={()=>handleRentals(item.id)} >Rent Item</ItemListRentButton>
 							</div>
 						);
 					})}
-				</div>
+				</ContentCard>
 
 				{/* Party Section */}
 				<div className='party-title'>
-					<h2>Party</h2>
+					<ItemsListedH2>Party</ItemsListedH2>
 				</div>
-				<div className='party-content'>
+				<ContentCard className='party-content'>
 					{party.map(item => {
 						return (
 							<div className='party-card'>
 								<StyledImg src={item.ImagePath} alt='party equipment'></StyledImg>
-								<h3>{item.Title}</h3>
-								<p>${item.PricePerHour}/hr</p>
+								<ItemsListedH3>{item.Title}</ItemsListedH3>
+								<ItemsListedP>${item.PricePerHour}/hr</ItemsListedP>
 								{/* {console.log("item", item)} */}
-								<button onClick ={()=>handleRentals(item.id)} >Rent Item</button>
+								<ItemListRentButton onClick ={()=>handleRentals(item.id)} >Rent Item</ItemListRentButton>
 							</div>
 						);
 					})}
-				</div>
+				</ContentCard>
 
 				{/* Other Section */}
 				<div className='other-title'>
-					<h2>Other</h2>
+					<ItemsListedH2>Other</ItemsListedH2>
 				</div>
-				<div className='other-content'>
+				<ContentCard className='other-content'>
 					{other.map(item => {
 						return (
 							<div className='other-card'>
 								<StyledImg src={item.ImagePath} alt='tech equipment'></StyledImg>
-								<h3>{item.Title}</h3>
-								<p>${item.PricePerHour}/hr</p>
+								<ItemsListedH3>{item.Title}</ItemsListedH3>
+								<ItemsListedP>${item.PricePerHour}/hr</ItemsListedP>
 								{/* {console.log("item", item)} */}
-								<button onClick ={()=>handleRentals(item.id)} >Rent Item</button>
+								<ItemListRentButton onClick ={()=>handleRentals(item.id)} >Rent Item</ItemListRentButton>
 							</div>
 						);
 					})}
-				</div>
+				</ContentCard>
 			</div>
 			<Navbar />
 		</div>

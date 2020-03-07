@@ -202,7 +202,7 @@ export const ItemsListedH2 = styled.h2`
 export const ItemsListedH3 = styled.h3`
     font-family: 'Roboto', sans-serif;
     font-weight: bold;
-    font-size: 1em;
+    font-size: .85em;
     margin: 5px 0px 5px 0px;
 `;
 
