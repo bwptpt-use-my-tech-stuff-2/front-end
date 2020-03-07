@@ -6,6 +6,11 @@ import { ProductContext } from '../Context/ProductContext';
 
 import {
 	ItemsListedH1,
+	ItemsListedH2,
+	ItemsListedH3,
+	ItemsListedP,
+	ContentCard,
+	ItemListRentButton,
 } from './Styles';
 
 const StyledImg = styled.img`
@@ -50,30 +55,30 @@ export default function ItemsListed({history}) {
 				<ItemsListedH1>Discover Products</ItemsListedH1>
 			</div>
 			<div className='content-container'>
+				<div className='camera-title'>
+					<ItemsListedH2>Cameras</ItemsListedH2>
+				</div>
 				{/* Camera Section */}
-				<div className='camera-content'>
-					<div className='camera-title'>
-						<h2>Cameras</h2>
-					</div>
+				<ContentCard className='camera-content'>
 					{camera.map(item => {
 						return (
 							<div className='camera-card'>
 								<StyledImg src={item.ImagePath} alt='camera'></StyledImg>
-								<h3>{item.Title}</h3>
-								<p>${item.PricePerHour}/hr</p>
+								<ItemsListedH3>{item.Title}</ItemsListedH3>
+								<ItemsListedP>${item.PricePerHour}/hr</ItemsListedP>
 								{/* {console.log("item", item)} */}
-								<button onClick ={()=>handleRentals(item.id)
-								} >Rent Item</button>
+								<ItemListRentButton onClick ={()=>handleRentals(item.id)
+								} >Rent Item</ItemListRentButton>
 							</div>
 						);
 					})}
-				</div>
+				</ContentCard>
 
 				{/* Projector Section */}
+				<div className='projector-title'>
+					<h2>Projectors</h2>
+				</div>
 				<div className='projector-content'>
-					<div className='projector-title'>
-						<h2>Projectors</h2>
-					</div>
 					{projector.map(item => {
 						return (
 							<div className='projector-card'>
@@ -88,10 +93,10 @@ export default function ItemsListed({history}) {
 				</div>
 
 				{/* TV Section */}
+				<div className='tv-title'>
+					<h2>Tv's</h2>
+				</div>
 				<div className='tv-content'>
-					<div className='tv-title'>
-						<h2>Tv's</h2>
-					</div>
 					{tv.map(item => {
 						return (
 							<div className='tv-card'>
@@ -106,10 +111,10 @@ export default function ItemsListed({history}) {
 				</div>
 
 				{/* Instruments Section */}
+				<div className='instruments-title'>
+					<h2>Instruments</h2>
+				</div>
 				<div className='instruments-content'>
-					<div className='instruments-title'>
-						<h2>Instruments</h2>
-					</div>
 					{instrument.map(item => {
 						return (
 							<div className='instruments-card'>
@@ -124,10 +129,10 @@ export default function ItemsListed({history}) {
 				</div>
 
 				{/* Party Section */}
+				<div className='party-title'>
+					<h2>Party</h2>
+				</div>
 				<div className='party-content'>
-					<div className='party-title'>
-						<h2>Party</h2>
-					</div>
 					{party.map(item => {
 						return (
 							<div className='party-card'>
@@ -142,10 +147,10 @@ export default function ItemsListed({history}) {
 				</div>
 
 				{/* Other Section */}
+				<div className='other-title'>
+					<h2>Other</h2>
+				</div>
 				<div className='other-content'>
-					<div className='other-title'>
-						<h2>Other</h2>
-					</div>
 					{other.map(item => {
 						return (
 							<div className='other-card'>

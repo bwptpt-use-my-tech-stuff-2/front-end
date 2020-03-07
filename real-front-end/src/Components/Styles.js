@@ -190,3 +190,49 @@ export const ItemsListedH1 = styled.h1`
     margin: 64px 0px 32px 0px;
     text-align: center;
 `;
+
+export const ItemsListedH2 = styled.h2`
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 22px;
+    text-align: left;
+    margin-left: 20px;
+`;
+
+export const ItemsListedH3 = styled.h3`
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 1em;
+    margin: 5px 0px 5px 0px;
+`;
+
+export const ItemsListedP = styled.p`
+    font-family: 'Roboto', sans-serif;
+    color: gray;
+    font-size: 12px;
+    margin: 0px 0px 5px 0px;
+`;
+
+export const ContentCard = styled.div`
+    width: 220px;
+    display: flex;
+    justify-content: center;
+    text-align: left;
+    margin: 20px;
+`;
+
+export const ItemListRentButton = styled.button`
+    width: 85px;
+    height: 20px;
+    color: white;
+    font-size: .75em;
+    background: rgba(32, 99, 155, 0.8);
+    border: 1px solid gray;
+    border-radius: 6px;
+
+    :hover {
+        color: white;
+        background: rgba(32, 99, 155, 0.8);
+        opacity: 65%;
+    }
+`;
