@@ -45,8 +45,8 @@ function App() {
 							<Route path='/login' component={Login} />
 							<Route path='/listing-options' component={ListingOptions} />
 							<Route path='/product-date' component={ProductDate} />
-							<Route path='/product-price' component={ProductPrice} />
-							<Route path='/product-thank-you' component={ProductThankYou} />
+							<Route path='/product-price/:id' component={ProductPrice} />
+							<Route path='/product-thank-you/' component={ProductThankYou} />
 							<Route path='/product-rent/:id' component={ProductRent} />
 
 
