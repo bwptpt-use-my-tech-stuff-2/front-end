@@ -4,6 +4,15 @@ import Navbar from './navbar';
 import styled from 'styled-components';
 import { ProductContext } from '../Context/ProductContext';
 
+import {
+	ItemsListedH1,
+	ItemsListedH2,
+	ItemsListedH3,
+	ItemsListedP,
+	ContentCard,
+	ItemListRentButton,
+} from './Styles';
+
 const StyledImg = styled.img`
 	width: 200px;
 	border-radius: 8px 8px 0px 0px;
@@ -43,117 +52,117 @@ export default function ItemsListed({history}) {
 	return (
 		<div className='container'>
 			<div className='title-container'>
-				<h1>Discover Products</h1>
+				<ItemsListedH1>Discover Products</ItemsListedH1>
 			</div>
 			<div className='content-container'>
+				<div className='camera-title'>
+					<ItemsListedH2>Cameras</ItemsListedH2>
+				</div>
 				{/* Camera Section */}
-				<div className='camera-content'>
-					<div className='camera-title'>
-						<h2>Cameras</h2>
-					</div>
+				<ContentCard className='camera-content'>
 					{camera.map(item => {
 						return (
 							<div className='camera-card'>
 								<StyledImg src={item.ImagePath} alt='camera'></StyledImg>
-								<h3>{item.Title}</h3>
-								<p>${item.PricePerHour}/hr</p>
+								<ItemsListedH3>{item.Title}</ItemsListedH3>
+								<ItemsListedP>${item.PricePerHour}/hr</ItemsListedP>
 								{/* {console.log("item", item)} */}
-								<button onClick ={()=>handleRentals(item.id)
-								} >Rent Item</button>
+								<ItemListRentButton onClick ={()=>handleRentals(item.id)
+								} >Rent Item</ItemListRentButton>
 							</div>
 						);
 					})}
-				</div>
+				</ContentCard>
 
 				{/* Projector Section */}
-				<div className='projector-content'>
-					<div className='projector-title'>
-						<h2>Projectors</h2>
-					</div>
+				<div className='projector-title'>
+					<ItemsListedH2>Projectors</ItemsListedH2>
+				</div>
+				<ContentCard className='projector-content'>
 					{projector.map(item => {
 						return (
 							<div className='projector-card'>
 								<StyledImg src={item.ImagePath} alt='projector'></StyledImg>
-								<h3>{item.Title}</h3>
-								<p>${item.PricePerHour}/hr</p>
+								<ItemsListedH3>{item.Title}</ItemsListedH3>
+								<ItemsListedP>${item.PricePerHour}/hr</ItemsListedP>
 								{/* {console.log("item", item)} */}
-								<button onClick ={()=>handleRentals(item.id)} >Rent Item</button>
+								<ItemListRentButton onClick ={()=>handleRentals(item.id)} >Rent Item</ItemListRentButton>
 							</div>
 						);
 					})}
-				</div>
+				</ContentCard>
 
 				{/* TV Section */}
-				<div className='tv-content'>
-					<div className='tv-title'>
-						<h2>Tv's</h2>
-					</div>
+				<div className='tv-title'>
+					<ItemsListedH2>Tv's</ItemsListedH2>
+				</div>
+				<ContentCard className='tv-content'>
 					{tv.map(item => {
 						return (
 							<div className='tv-card'>
 								<StyledImg src={item.ImagePath} alt='tv'></StyledImg>
-								<h3>{item.Title}</h3>
-								<p>${item.PricePerHour}/hr</p>
+								<ItemsListedH3>{item.Title}</ItemsListedH3>
+								<ItemsListedP>${item.PricePerHour}/hr</ItemsListedP>
 								{/* {console.log("item", item)} */}
-								<button onClick ={()=>handleRentals(item.id)} >Rent Item</button>
+								<ItemListRentButton onClick ={()=>handleRentals(item.id)} >Rent Item</ItemListRentButton>
 							</div>
 						);
 					})}
-				</div>
+				</ContentCard>
 
 				{/* Instruments Section */}
-				<div className='instruments-content'>
-					<div className='instruments-title'>
-						<h2>Instruments</h2>
-					</div>
+				<div className='instruments-title'>
+					<ItemsListedH2>Instruments</ItemsListedH2>
+				</div>
+				<ContentCard className='instruments-content'>
 					{instrument.map(item => {
 						return (
 							<div className='instruments-card'>
 								<StyledImg src={item.ImagePath} alt='instruments'></StyledImg>
-								<h3>{item.Title}</h3>
-								<p>${item.PricePerHour}/hr</p>
+								<ItemsListedH3>{item.Title}</ItemsListedH3>
+								<ItemsListedP>${item.PricePerHour}/hr</ItemsListedP>
 								{/* {console.log("item", item)} */}
-								<button onClick ={()=>handleRentals(item.id)} >Rent Item</button>
+								<ItemListRentButton onClick ={()=>handleRentals(item.id)} >Rent Item</ItemListRentButton>
 							</div>
 						);
 					})}
-				</div>
+				</ContentCard>
 
 				{/* Party Section */}
-				<div className='party-content'>
-					<div className='party-title'>
-						<h2>Party</h2>
-					</div>
+				<div className='party-title'>
+					<ItemsListedH2>Party</ItemsListedH2>
+				</div>
+				<ContentCard className='party-content'>
 					{party.map(item => {
 						return (
 							<div className='party-card'>
 								<StyledImg src={item.ImagePath} alt='party equipment'></StyledImg>
-								<h3>{item.Title}</h3>
-								<p>${item.PricePerHour}/hr</p>
+								<ItemsListedH3>{item.Title}</ItemsListedH3>
+								<ItemsListedP>${item.PricePerHour}/hr</ItemsListedP>
 								{/* {console.log("item", item)} */}
-								<button onClick ={()=>handleRentals(item.id)} >Rent Item</button>
+								<ItemListRentButton onClick ={()=>handleRentals(item.id)} >Rent Item</ItemListRentButton>
 							</div>
 						);
 					})}
-				</div>
+				</ContentCard>
 
 				{/* Other Section */}
-				<div className='other-content'>
-					<div className='other-title'>
-						<h2>Other</h2>
-					</div>
+				<div className='other-title'>
+					<ItemsListedH2>Other</ItemsListedH2>
+				</div>
+				<ContentCard className='other-content'>
 					{other.map(item => {
 						return (
 							<div className='other-card'>
 								<StyledImg src={item.ImagePath} alt='tech equipment'></StyledImg>
-								<h3>{item.Title}</h3>
-								<p>${item.PricePerHour}/hr</p>
+								<ItemsListedH3>{item.Title}</ItemsListedH3>
+								<ItemsListedP>${item.PricePerHour}/hr</ItemsListedP>
 								{/* {console.log("item", item)} */}
-								<button onClick ={()=>handleRentals(item.id)} >Rent Item</button>
+								<ItemListRentButton onClick ={()=>handleRentals(item.id)} >Rent Item</ItemListRentButton>
 							</div>
 						);
 					})}
-				</div>
+				</ContentCard>
 			</div>
 			<Navbar />
 		</div>

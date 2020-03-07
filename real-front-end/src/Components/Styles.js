@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 
 
-//Global Styles--------------------
+//Global Styles----------------------------------------
 
 export const StyledContainer = styled.div`
     width: 375px;
@@ -19,7 +19,7 @@ export const StyledInput = styled.input`
 `;
 
 
-// landing page ---------------------
+// landing page -----------------------------------------
 
 export const LandingStyledContainer = styled.div`
     width: 375px;
@@ -33,6 +33,7 @@ export const UniversalH1 = styled.h1`
     font-weight: bold;
     font-size: 30px;
     line-height: 36px;
+    margin: 84px 0px 32px 0px;
     text-align: center;
 `;
 
@@ -63,7 +64,7 @@ export const UniversalP = styled.p`
 export const LandingSignUpButton = styled.button`
     width: 343px;
     height: 56px;
-    margin: 200px 0px 20px 0px;
+    margin: 120px 0px 20px 0px;
     color: white;
     font-size: 1em;
     font-weight: bold;
@@ -98,13 +99,8 @@ export const LandingButtonDiv = styled.div`
 `;
 
 
-    /* ${props => (props.type === 'LandingSignIn' ? `background: rgba(237, 85, 59, 0.8);` : null)}
-    ${props => (props.type === 'SignInSignIn' ? `background: rgba(237, 85, 59, 0.4);` : null)}
-    ${props => (props.type === 'danger' ? `background: #f44336;` : null)}
-    ${props => (props.type === 'warning' ? `background: #fdd835;` : null)} */
+// Sign in page ----------------------------------------
 
-
-// Sign in page --------------------
 
 export const SignInH1 = styled.h1`
     font-family: 'Roboto', sans-serif;
@@ -134,12 +130,109 @@ export const SignInSignInButton = styled.button`
 `;
 
 
-//ItemsListed Page --------------------
+//Sign up Page ----------------------------------------
 
-export const ItemListImg = styled.img`
-    width: 195px;
-    height: 145px;
-    left: 16px;
-    top: 216px;
-    border-radius: 8px 8px 0px 0px;
+export const SignUpSubmitButton = styled.button`
+    width: 343px;
+    height: 44px;
+    color: black;
+    font-size: 1em;
+    font-weight: bold;
+    background: rgba(237, 85, 59, 0.4);
+    border: 2px solid gray;
+    border-radius: 12px;
+    margin-top: 100px;
+
+    :hover {
+        color: white;
+        background: rgba(237, 85, 59, 0.8);
+    }
+`;
+
+export const SignUpH1 = styled.h1`
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 36px;
+    margin: 84px 0px 64px 0px;
+    text-align: center;
+`;
+
+//AddListing Page ----------------------------------------
+
+export const AddListingStyledContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    width: 375px;
+    margin: 15px;
+    margin: 0 auto;
+    text-align: left;
+`;
+
+export const AddListingH1 = styled.h1`
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 36px;
+    margin: 84px 0px 32px 0px;
+    text-align: center;
+`;
+
+
+//ItemsListed Page ----------------------------------------
+
+
+export const ItemsListedH1 = styled.h1`
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 36px;
+    margin: 64px 0px 32px 0px;
+    text-align: center;
+`;
+
+export const ItemsListedH2 = styled.h2`
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 22px;
+    text-align: left;
+    margin-left: 20px;
+`;
+
+export const ItemsListedH3 = styled.h3`
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: .85em;
+    margin: 5px 0px 5px 0px;
+`;
+
+export const ItemsListedP = styled.p`
+    font-family: 'Roboto', sans-serif;
+    color: gray;
+    font-size: 12px;
+    margin: 0px 0px 5px 0px;
+`;
+
+export const ContentCard = styled.div`
+    width: 220px;
+    display: flex;
+    justify-content: center;
+    text-align: left;
+    margin: 20px;
+`;
+
+export const ItemListRentButton = styled.button`
+    width: 85px;
+    height: 20px;
+    color: white;
+    font-size: .75em;
+    background: rgba(32, 99, 155, 0.8);
+    border: 1px solid gray;
+    border-radius: 6px;
+
+    :hover {
+        color: white;
+        background: rgba(32, 99, 155, 0.8);
+        opacity: 65%;
+    }
 `;
