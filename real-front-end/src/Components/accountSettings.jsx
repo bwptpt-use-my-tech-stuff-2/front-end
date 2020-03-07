@@ -140,6 +140,7 @@ const AccountSettings = props => {
 				<button onClick={handleSubmit}>Save Changes</button>
 			</form>
 			<button onClick={handleDeleteUser}>Delete Account</button>
+			{/* <button onClick={handleGetUsers}>Get Users</button> */}
 		</div>
 	);
 };
