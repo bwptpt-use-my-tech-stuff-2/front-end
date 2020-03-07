@@ -23,6 +23,7 @@ export default function ItemsListed({history}) {
 	}, []);
 	// const [itemInfo, setItemInfo] = useState([]); // All items
 	const { products, setProducts } = useContext(ProductContext);
+
  
 
   console.log("this is products",products)
@@ -57,7 +58,8 @@ export default function ItemsListed({history}) {
 								<h3>{item.Title}</h3>
 								<p>${item.PricePerHour}/hr</p>
 								{/* {console.log("item", item)} */}
-								<button onClick ={()=>handleRentals(item.id)} >Rent Item</button>
+								<button onClick ={()=>handleRentals(item.id)
+								} >Rent Item</button>
 							</div>
 						);
 					})}
