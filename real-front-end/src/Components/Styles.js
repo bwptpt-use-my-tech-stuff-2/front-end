@@ -33,6 +33,7 @@ export const UniversalH1 = styled.h1`
     font-weight: bold;
     font-size: 30px;
     line-height: 36px;
+    margin: 84px 0px 32px 0px;
     text-align: center;
 `;
 
@@ -63,7 +64,7 @@ export const UniversalP = styled.p`
 export const LandingSignUpButton = styled.button`
     width: 343px;
     height: 56px;
-    margin: 200px 0px 20px 0px;
+    margin: 120px 0px 20px 0px;
     color: white;
     font-size: 1em;
     font-weight: bold;
@@ -134,12 +135,50 @@ export const SignInSignInButton = styled.button`
 `;
 
 
-//ItemsListed Page --------------------
+//Sign up Page
 
-export const ItemListImg = styled.img`
-    width: 195px;
-    height: 145px;
-    left: 16px;
-    top: 216px;
-    border-radius: 8px 8px 0px 0px;
+export const SignUpSubmitButton = styled.button`
+    width: 343px;
+    height: 44px;
+    color: black;
+    font-size: 1em;
+    font-weight: bold;
+    background: rgba(237, 85, 59, 0.4);
+    border: 2px solid gray;
+    border-radius: 12px;
+    margin-top: 100px;
+
+    :hover {
+        color: white;
+        background: rgba(237, 85, 59, 0.8);
+    }
+`;
+
+export const SignUpH1 = styled.h1`
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 36px;
+    margin: 84px 0px 64px 0px;
+    text-align: center;
+`;
+
+//AddListing Page --------------------
+
+export const AddListingStyledContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    width: 375px;
+    margin: 15px;
+    margin: 0 auto;
+    text-align: left;
+`;
+
+export const AddListingH1 = styled.h1`
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 36px;
+    margin: 84px 0px 32px 0px;
+    text-align: center;
 `;

@@ -3,6 +3,10 @@ import Styled from 'styled-components';
 import { axiosWithAuth } from '../utils/axiosWithAuth';
 import { UserContext } from '../Context/UserContext';
 import { RenterContext } from '../Context/ProductContext';
+import styled from 'styled-components';
+
+import { AddListingStyledContainer, StyledInput, SignUpH1, SignUpSubmitButton } from './Styles';
+
 
 const SignUp = props => {
 	// const { owner } = useContext(UserContext);
@@ -65,11 +69,11 @@ const SignUp = props => {
 	const { ConfirmPassword } = confirmPassword;
 
 	return (
-		<div>
-			<h1 className='title'>Sign up with email</h1>
+		<AddListingStyledContainer>
+			<SignUpH1 className='title'>Sign up with email</SignUpH1>
 			<form onSubmit={handleSubmit}>
 				<label>First name</label>
-				<input
+				<StyledInput
 					type='text'
 					name='FirstName'
 					value={FirstName}
@@ -77,7 +81,7 @@ const SignUp = props => {
 					required
 				/>
 				<label>Last name</label>
-				<input
+				<StyledInput
 					type='text'
 					name='LastName'
 					value={LastName}
@@ -85,7 +89,7 @@ const SignUp = props => {
 					required
 				/>
 				<label>Location</label>
-				<input
+				<StyledInput
 					type='text'
 					name='Location'
 					value={Location}
@@ -94,9 +98,9 @@ const SignUp = props => {
 					required
 				/>
 				<label>Email</label>
-				<input type='email' name='Email' value={Email} onChange={handleChange} required />
+				<StyledInput type='email' name='Email' value={Email} onChange={handleChange} required />
 				<label>Password</label>
-				<input
+				<StyledInput
 					type='password'
 					name='Password'
 					value={Password}
@@ -104,16 +108,16 @@ const SignUp = props => {
 					required
 				/>
 				<label>Confirm Password</label>
-				<input
+				<StyledInput
 					type='password'
 					name='ConfirmPassword'
 					value={ConfirmPassword}
 					onChange={handleChangePassword}
 					required
 				/>
-				<button onClick={handleSubmit}>Submit</button>
+				<SignUpSubmitButton onClick={handleSubmit}>Submit</SignUpSubmitButton>
 			</form>
-		</div>
+		</AddListingStyledContainer>
 	);
 };
 
