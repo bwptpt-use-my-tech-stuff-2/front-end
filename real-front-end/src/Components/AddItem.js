@@ -9,7 +9,8 @@ import { ProductContext } from '../Context/ProductContext';
 
 const AddItem = props => {
 	const { products, setProducts } = useContext(ProductContext);
-	const { showModal, setShowModal } = useState({ open: false });
+	let categoryName = '',
+		conditionName = '';
 	const [newListing, setNewListing] = useState({
 		Title: '',
 		Description: '',
@@ -39,13 +40,24 @@ const AddItem = props => {
 			});
 	};
 
-	const openModal = () => {
-		setShowModal({ open: true });
+	const filterCategory = () => {
+		if (newListing.category_id === 1) return (categoryName = 'Camera');
+		if (newListing.category_id === 2) return (categoryName = 'Projector');
+		if (newListing.category_id === 3) return (categoryName = 'TV');
+		if (newListing.category_id === 4) return (categoryName = 'Instrument');
+		if (newListing.category_id === 5) return (categoryName = 'Party');
+		if (newListing.category_id === 6) return (categoryName = 'Other');
 	};
-
-	const closeModal = () => {
-		setShowModal({ open: false });
+	const filterCondition = () => {
+		if (newListing.condition_id === 1) return (conditionName = 'Mint');
+		if (newListing.condition_id === 2) return (conditionName = 'New');
+		if (newListing.condition_id === 3) return (conditionName = 'Good');
+		if (newListing.condition_id === 4) return (conditionName = 'Fair');
+		if (newListing.condition_id === 5) return (conditionName = 'Damaged');
+		if (newListing.condition_id === 6) return (conditionName = 'Broken');
 	};
+	filterCategory();
+	filterCondition();
 
 	return (
 		<div className='container'>
@@ -63,152 +75,130 @@ const AddItem = props => {
 				/>
 				<p>Add Image</p>
 			</div>
-			<form onSubmit={handleSubmit}>
-				<label>
-					Image URL
+			<div className='form'>
+				<div className='form-input'>
+					<h2>Image URL</h2>
 					<input
 						type='url'
 						name='ImagePath'
 						value={newListing.ImagePath}
 						onChange={handleChange}
 					/>
-				</label>
-				<label>
-					Title
+				</div>
+				<div className='form-input'>
+					<h2>Title</h2>
 					<input
 						type='text'
 						name='Title'
 						value={newListing.Title}
 						onChange={handleChange}
 					/>
-				</label>
-				<label>
-					Description
-					{/* <input
-						type='text-area'
-						name='Description'
-						value={newListing.Description}
-						onChange={handleChange}
-					/> */}
+				</div>
+				<div className='form-input'>
+					<h2>Description</h2>
 					<textarea
 						name='Description'
 						value={newListing.Description}
 						onChange={handleChange}
 					></textarea>
-				</label>
+				</div>
 
-				{/* <label>
-					Category
-					<select
-						name='category_id'
-						onChange={handleChange}
-						value={newListing.category_id}
+				<div className='form-input'>
+					<h2>Category</h2>
+					<Popup
+						modal
+						trigger={
+							<button onChange={handleChange} className='select-category'>
+								{categoryName}
+							</button>
+						}
 					>
-						<option value='1'>Camera</option>
-						<option value='2'>Projector</option>
-						<option value='3'>TV</option>
-						<option value='4'>Instruments</option>
-						<option value='5'>Party</option>
-						<option value='6'>Other</option>
-					</select>
-				</label> */}
-
-				<label>
-					Category
-					<button
-						type='button'
-						onClick={() => {
-							setShowModal({ open: 'true' });
-						}}
-					>
-						{newListing.category_id}
-					</button>
-					<Popup open={showModal} onClose={closeModal} closeOnDocumentClick>
-						<div className='modal-category'>
-							<div className='title'>
-								<h1>New listing</h1>
+						{close => (
+							<div className='modal'>
+								<div className='heading'>
+									<h1>New listing</h1>
+								</div>
+								<div className='sub-heading'>
+									<h2>Choose Category</h2>
+								</div>
+								<div className='category-list'>
+									<div className='category'>
+										<button
+											name='category_id'
+											value='1'
+											onClick={() => {
+												setNewListing({ ...newListing, category_id: 1 });
+												close();
+											}}
+										>
+											Camera
+										</button>
+									</div>
+									<div className='category'>
+										<button
+											name='category_id'
+											value='2'
+											onClick={() => {
+												setNewListing({ ...newListing, category_id: 2 });
+												close();
+											}}
+										>
+											Projector
+										</button>
+									</div>
+									<div className='category'>
+										<button
+											name='category_id'
+											value='3'
+											onClick={() => {
+												setNewListing({ ...newListing, category_id: 3 });
+												close();
+											}}
+										>
+											TV
+										</button>
+									</div>
+									<div className='category'>
+										<button
+											name='category_id'
+											value='4'
+											onClick={() => {
+												setNewListing({ ...newListing, category_id: 4 });
+												close();
+											}}
+										>
+											Instrument
+										</button>
+									</div>
+									<div className='category'>
+										<button
+											name='category_id'
+											value='5'
+											onClick={() => {
+												setNewListing({ ...newListing, category_id: 5 });
+												close();
+											}}
+										>
+											Party
+										</button>
+									</div>
+									<div className='category'>
+										<button
+											name='category_id'
+											value='6'
+											onClick={() => {
+												setNewListing({ ...newListing, category_id: 6 });
+												close();
+											}}
+										>
+											Other
+										</button>
+									</div>
+								</div>
 							</div>
-							<div className='sub-title'>
-								<h2>Choose Category</h2>
-							</div>
-							<div className='category-list'>
-								<button
-									type='button'
-									className='category'
-									name='category_id'
-									value='1'
-									onClick={() => {
-										setNewListing({ ...newListing, category_id: 1 });
-										closeModal();
-									}}
-								>
-									Camera
-								</button>
-								<button
-									type='button'
-									className='category'
-									name='category_id'
-									value='2'
-									onChange={handleChange}
-									onClick={() => {
-										setNewListing({ ...newListing, category_id: 2 });
-										closeModal();
-									}}
-								>
-									Projector
-								</button>
-								<button
-									type='button'
-									className='category'
-									name='category_id'
-									value='3'
-									onClick={() => {
-										setNewListing({ ...newListing, category_id: 2 });
-										closeModal();
-									}}
-								>
-									TV
-								</button>
-								<button
-									type='button'
-									className='category'
-									name='category_id'
-									value='4'
-									onClick={() => {
-										setNewListing({ ...newListing, category_id: 3 });
-										closeModal();
-									}}
-								>
-									Instruments
-								</button>
-								<button
-									type='button'
-									className='category'
-									name='category_id'
-									value='5'
-									onClick={() => {
-										setNewListing({ ...newListing, category_id: 5 });
-										closeModal();
-									}}
-								>
-									Party
-								</button>
-								<button
-									type='button'
-									className='category'
-									name='category_id'
-									value='6'
-									onClick={() => {
-										setNewListing({ ...newListing, category_id: 6 });
-										closeModal();
-									}}
-								>
-									Other
-								</button>
-							</div>
-						</div>
+						)}
 					</Popup>
-				</label>
+				</div>
 
 				{/* <input
 				type='date'
@@ -217,33 +207,26 @@ const AddItem = props => {
 				 value={setNewListing.PickupDate}
 				onChange={handleChange}
 			/> */}
-				<label>
-					Price per hour
+				<div className='form-input'>
+					<h2>Price per hour</h2>
 					<input
 						type='text'
 						name='PricePerHour'
 						value={newListing.PricePerHour}
 						onChange={handleChange}
 					/>
-				</label>
-				<label>
-					Price per day
+				</div>
+				<div className='form-input'>
+					<h2>Price per day</h2>
 					<input
 						type='text'
 						name='PricePerDay'
 						value={newListing.PricePerDay}
 						onChange={handleChange}
 					/>
-				</label>
+				</div>
 
-				{/* <input
-				type='text'
-				name='condition_id'
-				placeholder='conditionid'
-				value={newListing.condition_id}
-				onChange={handleChange}
-			/> */}
-				<label>
+				{/* <label>
 					Condition
 					<select
 						name='condition_id'
@@ -257,13 +240,109 @@ const AddItem = props => {
 						<option value='5'>Damaged</option>
 						<option value='6'>Broken</option>
 					</select>
-				</label>
+				</label> */}
+				<div className='form-input'>
+					<h2>Condition</h2>
+					<Popup
+						modal
+						trigger={
+							<button onChange={handleChange} className='select-condition'>
+								{conditionName}
+							</button>
+						}
+					>
+						{close => (
+							<div className='modal'>
+								<div className='heading'>
+									<h1>New listing</h1>
+								</div>
+								<div className='sub-heading'>
+									<h2>Choose Condition</h2>
+								</div>
+								<div className='condition-list'>
+									<div className='condition'>
+										<button
+											name='condtion_id'
+											value='1'
+											onClick={() => {
+												setNewListing({ ...newListing, condition_id: 1 });
+												close();
+											}}
+										>
+											Mint
+										</button>
+									</div>
+									<div className='condition'>
+										<button
+											name='condtion_id'
+											value='2'
+											onClick={() => {
+												setNewListing({ ...newListing, condition_id: 2 });
+												close();
+											}}
+										>
+											New
+										</button>
+									</div>
+									<div className='condition'>
+										<button
+											name='condtion_id'
+											value='3'
+											onClick={() => {
+												setNewListing({ ...newListing, condition_id: 3 });
+												close();
+											}}
+										>
+											Good
+										</button>
+									</div>
+									<div className='condition'>
+										<button
+											name='condtion_id'
+											value='4'
+											onClick={() => {
+												setNewListing({ ...newListing, condition_id: 4 });
+												close();
+											}}
+										>
+											Fair
+										</button>
+									</div>
+									<div className='condition'>
+										<button
+											name='condtion_id'
+											value='5'
+											onClick={() => {
+												setNewListing({ ...newListing, condition_id: 5 });
+												close();
+											}}
+										>
+											Damaged
+										</button>
+									</div>
+									<div className='condition'>
+										<button
+											name='condtion_id'
+											value='6'
+											onClick={() => {
+												setNewListing({ ...newListing, condition_id: 6 });
+												close();
+											}}
+										>
+											Broken
+										</button>
+									</div>
+								</div>
+							</div>
+						)}
+					</Popup>
+				</div>
 
 				<button className='button' onClick={handleSubmit}>
 					{' '}
 					Add listing
 				</button>
-			</form>
+			</div>
 			<Navbar />
 		</div>
 	);
