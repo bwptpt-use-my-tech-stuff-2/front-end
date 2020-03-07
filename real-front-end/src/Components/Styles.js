@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 
 
-//Global Styles--------------------
+//Global Styles----------------------------------------
 
 export const StyledContainer = styled.div`
     width: 375px;
@@ -19,7 +19,7 @@ export const StyledInput = styled.input`
 `;
 
 
-// landing page ---------------------
+// landing page -----------------------------------------
 
 export const LandingStyledContainer = styled.div`
     width: 375px;
@@ -99,13 +99,8 @@ export const LandingButtonDiv = styled.div`
 `;
 
 
-    /* ${props => (props.type === 'LandingSignIn' ? `background: rgba(237, 85, 59, 0.8);` : null)}
-    ${props => (props.type === 'SignInSignIn' ? `background: rgba(237, 85, 59, 0.4);` : null)}
-    ${props => (props.type === 'danger' ? `background: #f44336;` : null)}
-    ${props => (props.type === 'warning' ? `background: #fdd835;` : null)} */
+// Sign in page ----------------------------------------
 
-
-// Sign in page --------------------
 
 export const SignInH1 = styled.h1`
     font-family: 'Roboto', sans-serif;
@@ -135,7 +130,7 @@ export const SignInSignInButton = styled.button`
 `;
 
 
-//Sign up Page
+//Sign up Page ----------------------------------------
 
 export const SignUpSubmitButton = styled.button`
     width: 343px;
@@ -163,7 +158,7 @@ export const SignUpH1 = styled.h1`
     text-align: center;
 `;
 
-//AddListing Page --------------------
+//AddListing Page ----------------------------------------
 
 export const AddListingStyledContainer = styled.div`
     display: flex;
@@ -180,5 +175,18 @@ export const AddListingH1 = styled.h1`
     font-size: 30px;
     line-height: 36px;
     margin: 84px 0px 32px 0px;
+    text-align: center;
+`;
+
+
+//ItemsListed Page ----------------------------------------
+
+
+export const ItemsListedH1 = styled.h1`
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 36px;
+    margin: 64px 0px 32px 0px;
     text-align: center;
 `;
