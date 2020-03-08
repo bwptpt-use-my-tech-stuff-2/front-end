@@ -49,7 +49,6 @@ function App() {
 							<Route path='/product-thank-you/' component={ProductThankYou} />
 							<Route path='/product-rent/:id' component={ProductRent} />
 
-
 							<PrivateRoute>
 								<Route exact path='/secure' component={ProfilePage} />
 								<Route path='/secure/items-list' component={ItemsListed} />
