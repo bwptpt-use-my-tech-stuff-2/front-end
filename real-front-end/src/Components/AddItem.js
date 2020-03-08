@@ -6,6 +6,7 @@ import Navbar from './navbar';
 
 // Context
 import { ProductContext } from '../Context/ProductContext';
+import { Redirect } from 'react-router-dom';
 
 const AddItem = props => {
 	const { products, setProducts } = useContext(ProductContext);
@@ -33,9 +34,11 @@ const AddItem = props => {
 		axiosWithAuth()
 			.post('https://ls-bwptpt-use-my-tech-stuff-2.herokuapp.com/api/stuff', newListing)
 			.then(res => {
-				console.log('User response', res.data);
+				console.log('Add Item response', res.data);
 				//  setNewListing(res.data)
 				setProducts([...products, res.data]);
+				// productId = res.data[res.date.length - 1].id
+				// console.log('product id', productId.id);
 				props.history.push('/secure/items-list');
 			});
 	};
@@ -339,7 +342,6 @@ const AddItem = props => {
 				</div>
 
 				<button className='button' onClick={handleSubmit}>
-					{' '}
 					Add listing
 				</button>
 			</div>
