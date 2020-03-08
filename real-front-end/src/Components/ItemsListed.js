@@ -11,12 +11,8 @@ import {
 	ItemsListedP,
 	ContentCard,
 	ItemListRentButton,
+	StyledImg
 } from './Styles';
-
-const StyledImg = styled.img`
-	width: 200px;
-	border-radius: 8px 8px 0px 0px;
-`;
 
 export default function ItemsListed({history}) {
 	// const { loggedIn, setLoggedIn } = useContext(LoggedInContext);
