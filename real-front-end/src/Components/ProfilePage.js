@@ -1,6 +1,15 @@
 import React from 'react';
 import Navbar from './navbar';
 import { Link } from 'react-router-dom';
+import styled from 'styled-components';
+
+import {
+	UniversalH1,
+	ProfileImg,
+	ProfileButtonContainer,
+	ProfilePageButton,
+	ProfileP
+} from './Styles';
 
 const ProfilePage = () => {
 	return (
@@ -12,20 +21,20 @@ const ProfilePage = () => {
 				</div>
 			</div>
 			<div className='title-container'>
-				<h1 className='title'>Use My Tech Stuff</h1>
+				<UniversalH1 className='title'>Use My Tech Stuff</UniversalH1>
 			</div>
 			<div className='middle-content'>
 				<div className='img-container'>
-					<img src='https://d8kaami2d2b7v.cloudfront.net/monthly_2019_08/Small_Color.thumb.jpg.320de9807fc78b159000712b6ad9b537.jpg' />
+					<ProfileImg src='https://d8kaami2d2b7v.cloudfront.net/monthly_2019_08/Small_Color.thumb.jpg.320de9807fc78b159000712b6ad9b537.jpg' />
 				</div>
 				<div className='location'>
-					<p className='location-text'>Location:</p>
+					<ProfileP className='location-text'>Location:</ProfileP>
 				</div>
 			</div>
-			<div className='btn-container'>
-				<button>Your listings</button>
-				<button>History</button>
-			</div>
+			<ProfileButtonContainer className='btn-container'>
+				<ProfilePageButton><i class="fas fa-tag"></i> Your listings</ProfilePageButton>
+				<ProfilePageButton><i class="fas fa-history"></i> History</ProfilePageButton>
+			</ProfileButtonContainer>
 			<Navbar />
 		</div>
 	);

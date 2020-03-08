@@ -3,9 +3,11 @@ import styled, { css } from 'styled-components';
 
 //Global Styles----------------------------------------
 
+
 export const StyledContainer = styled.div`
     width: 375px;
-    margin: 15px;
+    margin: 15px 15px 80px 15px;
+
     margin: 0 auto;
 `;
 
@@ -20,6 +22,7 @@ export const StyledInput = styled.input`
 
 
 // landing page -----------------------------------------
+
 
 export const LandingStyledContainer = styled.div`
     width: 375px;
@@ -132,6 +135,7 @@ export const SignInSignInButton = styled.button`
 
 //Sign up Page ----------------------------------------
 
+
 export const SignUpSubmitButton = styled.button`
     width: 343px;
     height: 44px;
@@ -158,7 +162,9 @@ export const SignUpH1 = styled.h1`
     text-align: center;
 `;
 
+
 //AddListing Page ----------------------------------------
+
 
 export const AddListingStyledContainer = styled.div`
     display: flex;
@@ -213,6 +219,12 @@ export const ItemsListedP = styled.p`
     margin: 0px 0px 5px 0px;
 `;
 
+export const StyledImg = styled.img`
+    width: 80%;
+    max-height: 160px;
+	border-radius: 8px 8px 0px 0px;
+`;
+
 export const ContentCard = styled.div`
     width: 220px;
     display: flex;
@@ -234,5 +246,84 @@ export const ItemListRentButton = styled.button`
         color: white;
         background: rgba(32, 99, 155, 0.8);
         opacity: 65%;
+    }
+`;
+
+
+//NavBar Page ----------------------------------------
+
+
+export const NavContainer = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 80px;
+    background-color: white;
+    /* position: fixed; */
+`;
+
+export const NavCard = styled.div`
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-self: center;
+    text-align: center;
+`;
+
+export const StyledIcon = styled.div`
+    margin-bottom: 5px;
+`;
+
+export const StyledNavLink = styled.div`
+    font-family: 'Roboto', sans-serif;
+    font-size: 1em;
+    color: black;
+`;
+
+
+//Profile Page ----------------------------------------
+
+
+export const ProfileImg = styled.img`
+    max-width: 200px;
+    border-radius: 50%;
+`;
+
+export const ProfileP = styled.p`
+    font-family: 'Roboto', sans-serif;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    margin-top: 10px;
+`;
+
+export const ProfileButtonContainer = styled.div`
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    margin: 0 auto;
+    flex-direction: column;
+`;
+
+export const ProfilePageButton = styled.button`
+    width: 100%;
+    height: 44px;
+    color: white;
+    font-size: 1em;
+    font-weight: bold;
+    background: rgba(32, 99, 155, 0.8);
+    border: 2px solid gray;
+    border-radius: 8px;
+    margin-top: 40px;
+
+    :hover {
+        opacity: 65%;
+        background: rgba(32, 99, 155, 0.8);
     }
 `;

@@ -1,27 +1,45 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import styled from 'styled-components';
+
+import {
+	NavContainer,
+	NavCard,
+	StyledIcon,
+	StyledNavLink
+} from './Styles';
 
 const Navbar = () => {
 	return (
 		<div className='container'>
-			<div className='nav-link'>
-				<div className='link'>
-					<i className='fa fa-home' aria-hidden='true'></i>
-					<Link to='/secure/items-list'>Home</Link>
-				</div>
-				<div className='link'>
-					<i class='fa fa-plus' aria-hidden='true'></i>
-					<Link to='/secure/add-item'> AddItem</Link>
-				</div>
-				<div className='link'>
-					<i class='fa fa-search' aria-hidden='true'></i>
-					<Link to='/'> Search Item</Link>
-				</div>
-				<div className='link'>
-					<i class='fa fa-user-o' aria-hidden='true'></i>
-					<Link to='/secure/profile-page'> Profile</Link>
-				</div>
-			</div>
+			<NavContainer className='nav-link'>
+				<NavCard className='link'>
+					<StyledIcon>
+						<i className='fa fa-home fa-lg' aria-hidden='true'></i>
+					</StyledIcon>
+					<StyledNavLink>
+						<Link to='/secure/items-list' style={{ textDecoration: 'none' }}>Home</Link>
+					</StyledNavLink>
+				</NavCard>
+				<NavCard className='link'>
+					<StyledIcon>
+						<i className='fa fa-plus fa-lg' aria-hidden='true'></i>
+					</StyledIcon>
+					<Link to='/secure/add-item' style={{ textDecoration: 'none' }}> Add Item</Link>
+				</NavCard>
+				<NavCard className='link'>
+					<StyledIcon>	
+						<i className='fa fa-search fa-lg' aria-hidden='true'></i>
+					</StyledIcon>
+					<Link to='/' style={{ textDecoration: 'none' }}> Search Item</Link>
+				</NavCard>
+				<NavCard className='link'>
+					<StyledIcon>
+						<i className='fa fa-user-o fa-lg' aria-hidden='true'></i>
+					</StyledIcon>
+					<Link to='/secure/profile-page' style={{ textDecoration: 'none' }}> Profile</Link>
+				</NavCard>
+			</NavContainer>
 		</div>
 	);
 };
