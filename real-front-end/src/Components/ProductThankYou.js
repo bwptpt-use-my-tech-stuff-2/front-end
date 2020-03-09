@@ -1,32 +1,35 @@
-import React , {useState, useEffect}from "react";
-import { axiosWithAuth } from "../utils/axiosWithAuth";
-import ProductPrice from "../Components/ProductPrice"
-const ProductThankYou =({match, price})=>{
-    const [summary,setSummary]=useState([])
+import React, { useContext } from "react";
 
+import { ProductContext } from "../Context/ProductContext";
+import home from "../Images/home.svg";
+import Navbar from "./navbar"
+ 
+const ProductThankYou = ({ match, history }) => {
+  const { products, setProducts } = useContext(ProductContext);
 
+ 
 
-    useEffect(() => {
-        axiosWithAuth()
-          .get(
-            `https://ls-bwptpt-use-my-tech-stuff-2.herokuapp.com/api/stuff/${match.params.id}`
-          )
-          .then(res => {
-            console.log("this is the data from product thankyou", res.data);
-            setSummary(res.data);
-          });
-      }, []);
+  
 
+  
+    
+  
 
-    return (
-        <div>
-        <h1> Your item has been added to your cart  </h1>
-        <p> Total Amount :{summary.PricePerHour} </p>
-        <p> Pick up date :</p>
-        <p> Pick up Amount :</p>
-        </div>
-        
-    )
-}
+  return (
+    <>
+    <div className="thankyou-message">
+      <h1> Your item has been added to your cart </h1>
+      
+     
+      <img src={home} />
+     
+    </div>
+    <div>
+    <Navbar />
+    </div>
+    </>
+
+  );
+};
 
 export default ProductThankYou;
