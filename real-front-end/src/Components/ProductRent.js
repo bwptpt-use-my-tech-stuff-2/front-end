@@ -8,7 +8,8 @@ import { axiosWithAuth } from "../utils/axiosWithAuth";
 import styled from 'styled-components';
 
 import {
-  StyledContainer,
+  RentItemContainer,
+  RentItemTextContainer,
   RentItemImg,
   RentItemH2,
   RentItemH3,
@@ -50,21 +51,21 @@ const ProductRent = ({ match, history }) => {
 
    console.log ("Rentals ID" ,match.params.id)
   return (
-    <div className='rent-item'>
-      <StyledContainer>
+    <RentItemContainer className='rent-item'>
+      <RentItemTextContainer>
         <RentItemImg src={rentals.ImagePath} />
         <RentItemH2> {rentals.Title} </RentItemH2>
         <RentItemH3>Price Per Day :{rentals.PricePerDay}</RentItemH3>
         <RentItemH3>Price Per Hour :{rentals.PricePerHour}</RentItemH3>
-      </StyledContainer>
-      <RentItemDiv>Description :{rentals.Description}</RentItemDiv>
+        <RentItemDiv>Description :{rentals.Description}</RentItemDiv>
       <div>
         <RentItemH3>condition : {rentals.condition_id}</RentItemH3>
       </div>
       {/* <div><ProductPrice  price= {price}/></div> */}
+      </RentItemTextContainer>
 
       <RentNowButton onClick={() => handleRental(rentals.id)}> Rent Now </RentNowButton>
-    </div>
+    </RentItemContainer>
   );
 };
 

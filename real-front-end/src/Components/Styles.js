@@ -344,26 +344,38 @@ export const ItemListRentButton = styled.button`
 
 //RentItem Page ----------------------------------------
 
+
+export const RentItemContainer = styled.div`
+    width: 375px;
+    margin: 0 auto;
+`;
+
+export const RentItemTextContainer = styled.div`
+    width: 330px;
+    margin: 0 auto;
+`;
+
 export const RentItemImg = styled.img`
-margin: 20px 0px 20px 0px;
+    margin: 20px 0px 20px 0px;
     width: 330px;
     max-height: 230px;
-	border-radius: 10px;
+    border-radius: 10px;
 `;
 
 export const RentItemH2 = styled.h2`
     font-family: 'Roboto', sans-serif;
     font-weight: bold;
     font-size: 22px;
+    margin-bottom: 30px;
     text-align: left;
-    margin-left: 20px;
 `;
 
 export const RentItemH3 = styled.h3`
     font-family: 'Roboto', sans-serif;
     font-weight: bold;
-    font-size: 1em;
+    font-size: .85em;
     margin: 10px 0px 10px 0px;
+    text-align: left;
 `;
 
 export const RentItemDiv = styled.div`
@@ -372,12 +384,12 @@ export const RentItemDiv = styled.div`
     font-family: 'Roboto', sans-serif;
     color: gray;
     font-size: .80em;
-    margin: 0 auto;
+    text-align: left;
     padding: 20px 0px 20px 0px;
 `;
 
 export const RentNowButton = styled.button`
-    width: 75%;
+    width: 90%;
     height: 30px;
     margin: 10px 0px 10px 0px;
     color: white;
