@@ -140,7 +140,6 @@ export const SignUpWithButtonContainer = styled.div`
     flex-direction: column;
 `;
 
-
 //SignUpH1 used here
 
 
@@ -150,14 +149,20 @@ export const SignUpWithFacebookButton = styled.button`
     color: white;
     font-size: 1em;
     font-weight: bold;
-    background: #4260B5;;
+    background: #3D5A98;;
     border: 1px solid white;
     border-radius: 6px;
     margin: 20px;
+    padding-bottom: 15px;
 
     :hover {
         opacity: 70%;
     }
+`;
+
+export const SignUpWithFacebookButtonImg = styled.img`
+    width: 40px;
+    margin-right: 20px;
 `;
 
 export const SignUpWithGoogleButton = styled.button`
@@ -170,10 +175,16 @@ export const SignUpWithGoogleButton = styled.button`
     border: 1px solid white;
     border-radius: 6px;
     margin: 20px;
+    padding-bottom: 10px;
 
     :hover {
         opacity: 70%;
     }
+`;
+
+export const SignUpWithGoogleButtonImg = styled.img`
+    width: 25px;
+    margin-right: 20px;
 `;
 
 export const SignUpWithEmailButton = styled.button`
@@ -186,10 +197,16 @@ export const SignUpWithEmailButton = styled.button`
     border: 1px solid white;
     border-radius: 6px;
     margin: 20px;
+    padding-bottom: 20px;
 
     :hover {
         opacity: 70%;
     }
+`;
+
+export const SignUpWithEmailButtonImg = styled.img`
+    width: 40px;
+    margin-right: 20px;
 `;
 
 //Sign up Page ----------------------------------------

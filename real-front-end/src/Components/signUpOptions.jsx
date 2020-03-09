@@ -6,8 +6,12 @@ import {
 	SignUpH1,
 	SignUpWithButtonContainer,
 	SignUpWithFacebookButton,
+	SignUpWithFacebookButtonImg,
+	FacebookButtonFormat,
 	SignUpWithGoogleButton,
-	SignUpWithEmailButton
+	SignUpWithGoogleButtonImg,
+	SignUpWithEmailButton,
+	SignUpWithEmailButtonImg
 } from './Styles';
 
 const SignUpOptions = () => {
@@ -18,13 +22,13 @@ const SignUpOptions = () => {
 			</div>
 			<SignUpWithButtonContainer className='links-container'>
 				<Link to=''>
-					<SignUpWithFacebookButton className='link'>Sign up with Facebook</SignUpWithFacebookButton>
+					<SignUpWithFacebookButton className='link'><SignUpWithFacebookButtonImg src='https://pngimg.com/uploads/facebook_logos/facebook_logos_PNG19751.png' />Sign up with Facebook</SignUpWithFacebookButton>
 				</Link>
 				<Link to=''>
-					<SignUpWithGoogleButton className='link'>Sign up with Google</SignUpWithGoogleButton>
+					<SignUpWithGoogleButton className='link'><SignUpWithGoogleButtonImg src='https://pluspng.com/img-png/google-logo-png-open-2000.png' />Sign up with Google</SignUpWithGoogleButton>
 				</Link>
 				<Link to='/register'>
-					<SignUpWithEmailButton className='link'>Sign up with Email</SignUpWithEmailButton>
+					<SignUpWithEmailButton className='link'><SignUpWithEmailButtonImg src='https://pluspng.com/img-png/email-icon-png-email-icon-2048.png' />Sign up with Email</SignUpWithEmailButton>
 				</Link>
 			</SignUpWithButtonContainer>
 		</div>
