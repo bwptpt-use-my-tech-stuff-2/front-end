@@ -171,6 +171,7 @@ export const AddListingStyledContainer = styled.div`
     flex-direction: column;
     width: 375px;
     margin: 15px 15px 80px 15px;
+    padding-bottom: 100px;
     margin: 0 auto;
     text-align: left;
 `;
@@ -204,6 +205,7 @@ export const AddItemP = styled.p`
 
 export const AddItemInput = styled.input`
     width: 90%;
+    height: 25px;
     padding: 12px 20px;
     margin: 8px 0;
     box-sizing: border-box;
@@ -259,7 +261,7 @@ export const CategoryModalH2 = styled.h2`
 
 
 export const CategoryModalButton = styled.button`
-    width: 90%;
+    width: 50%;
     height: 30px;
     margin: 10px 0px 10px 0px;
     color: white;

@@ -272,14 +272,14 @@ const AddItem = props => {
 						{close => (
 							<SelectCategoryModalContainer className='modal'>
 								<div className='heading'>
-									<h1>New listing</h1>
+									<CategoryModalH1>New listing</CategoryModalH1>
 								</div>
 								<div className='sub-heading'>
-									<h2>Choose Condition</h2>
+									<CategoryModalH2>Choose Condition</CategoryModalH2>
 								</div>
 								<div className='condition-list'>
 									<div className='condition'>
-										<button
+										<CategoryModalButton
 											name='condtion_id'
 											value='1'
 											onClick={() => {
@@ -288,10 +288,10 @@ const AddItem = props => {
 											}}
 										>
 											Mint
-										</button>
+										</CategoryModalButton>
 									</div>
 									<div className='condition'>
-										<button
+										<CategoryModalButton
 											name='condtion_id'
 											value='2'
 											onClick={() => {
@@ -300,10 +300,10 @@ const AddItem = props => {
 											}}
 										>
 											New
-										</button>
+										</CategoryModalButton>
 									</div>
 									<div className='condition'>
-										<button
+										<CategoryModalButton
 											name='condtion_id'
 											value='3'
 											onClick={() => {
@@ -312,10 +312,10 @@ const AddItem = props => {
 											}}
 										>
 											Good
-										</button>
+										</CategoryModalButton>
 									</div>
 									<div className='condition'>
-										<button
+										<CategoryModalButton
 											name='condtion_id'
 											value='4'
 											onClick={() => {
@@ -324,10 +324,10 @@ const AddItem = props => {
 											}}
 										>
 											Fair
-										</button>
+										</CategoryModalButton>
 									</div>
 									<div className='condition'>
-										<button
+										<CategoryModalButton
 											name='condtion_id'
 											value='5'
 											onClick={() => {
@@ -336,10 +336,10 @@ const AddItem = props => {
 											}}
 										>
 											Damaged
-										</button>
+										</CategoryModalButton>
 									</div>
 									<div className='condition'>
-										<button
+										<CategoryModalButton
 											name='condtion_id'
 											value='6'
 											onClick={() => {
@@ -348,7 +348,7 @@ const AddItem = props => {
 											}}
 										>
 											Broken
-										</button>
+										</CategoryModalButton>
 									</div>
 								</div>
 							</SelectCategoryModalContainer>
