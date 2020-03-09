@@ -7,7 +7,6 @@ import styled, { css } from 'styled-components';
 export const StyledContainer = styled.div`
     width: 375px;
     margin: 15px 15px 80px 15px;
-
     margin: 0 auto;
 `;
 
@@ -342,6 +341,58 @@ export const ItemListRentButton = styled.button`
     }
 `;
 
+
+//RentItem Page ----------------------------------------
+
+export const RentItemImg = styled.img`
+margin: 20px 0px 20px 0px;
+    width: 330px;
+    max-height: 230px;
+	border-radius: 10px;
+`;
+
+export const RentItemH2 = styled.h2`
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 22px;
+    text-align: left;
+    margin-left: 20px;
+`;
+
+export const RentItemH3 = styled.h3`
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 1em;
+    margin: 10px 0px 10px 0px;
+`;
+
+export const RentItemDiv = styled.div`
+    width: 80%;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    color: gray;
+    font-size: .80em;
+    margin: 0 auto;
+    padding: 20px 0px 20px 0px;
+`;
+
+export const RentNowButton = styled.button`
+    width: 75%;
+    height: 30px;
+    margin: 10px 0px 10px 0px;
+    color: white;
+    font-size: .85em;
+    font-weight: bold;
+    background: rgba(32, 99, 155, 0.8);
+    border: 1px solid gray;
+    border-radius: 6px;
+
+    :hover {
+        color: white;
+        background: rgba(32, 99, 155, 0.8);
+        opacity: 65%;
+    }
+`;
 
 //NavBar Page ----------------------------------------
 

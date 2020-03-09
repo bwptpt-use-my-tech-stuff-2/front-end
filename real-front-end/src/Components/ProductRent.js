@@ -4,6 +4,18 @@ import React, { useState, useEffect, useContext } from "react";
 import { axiosWithAuth } from "../utils/axiosWithAuth";
 //  import ProductPrice from "../Components/ProductPrice"
 
+//Styles
+import styled from 'styled-components';
+
+import {
+  StyledContainer,
+  RentItemImg,
+  RentItemH2,
+  RentItemH3,
+  RentItemDiv,
+  RentNowButton,
+} from './Styles';
+
 const ProductRent = ({ match, history }) => {
  // const { products, setProducts } = useContext(ProductContext);
   const [rentals, setRentals] = useState({
@@ -38,21 +50,21 @@ const ProductRent = ({ match, history }) => {
 
    console.log ("Rentals ID" ,match.params.id)
   return (
-    <>
+    <div className='rent-item'>
+      <StyledContainer>
+        <RentItemImg src={rentals.ImagePath} />
+        <RentItemH2> {rentals.Title} </RentItemH2>
+        <RentItemH3>Price Per Day :{rentals.PricePerDay}</RentItemH3>
+        <RentItemH3>Price Per Hour :{rentals.PricePerHour}</RentItemH3>
+      </StyledContainer>
+      <RentItemDiv>Description :{rentals.Description}</RentItemDiv>
       <div>
-        <img src={rentals.ImagePath} />
-        <p> {rentals.Title} </p>
-        <h3>Price Per Day :{rentals.PricePerDay}</h3>
-        <h3>Price Per Hour :{rentals.PricePerHour}</h3>
-      </div>
-      <div>Description :{rentals.Description}</div>
-      <div>
-        <h3>condition : {rentals.condition_id}</h3>
+        <RentItemH3>condition : {rentals.condition_id}</RentItemH3>
       </div>
       {/* <div><ProductPrice  price= {price}/></div> */}
 
-      <button onClick={() => handleRental(rentals.id)}> Rent Now </button>
-    </>
+      <RentNowButton onClick={() => handleRental(rentals.id)}> Rent Now </RentNowButton>
+    </div>
   );
 };
 
