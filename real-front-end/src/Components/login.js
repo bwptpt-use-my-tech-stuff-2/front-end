@@ -9,7 +9,7 @@ import {
 	SignInSignInButton,
 	StyledInput,
 	SignInH1,
-	StyledLabelSpan
+	StyledLabelDiv
 } from './Styles';
 
 const Login = props => {
@@ -48,8 +48,9 @@ const Login = props => {
 		<StyledContainer className='signInForm'>
 			<SignInH1>Sign in</SignInH1>
 			<form onSubmit={handleSubmit}>
-				<label>
-					<StyledLabelSpan>Email Address</StyledLabelSpan>
+				<StyledLabelDiv>
+					<label>Email Address</label>
+				</StyledLabelDiv>
 					<StyledInput
 						type='email'
 						name='Email'
@@ -57,9 +58,9 @@ const Login = props => {
 						required
 						onChange={handleChange}
 					/>
-				</label>
-				<label>
-					Password
+				<StyledLabelDiv>
+					<label>Password</label>
+				</StyledLabelDiv>
 					<StyledInput
 						required
 						type='password'
@@ -67,7 +68,6 @@ const Login = props => {
 						value={Password}
 						onChange={handleChange}
 					/>
-				</label>
 				<SignInSignInButton onClick={handleSubmit}>Sign In</SignInSignInButton>
 			</form>
 		</StyledContainer>

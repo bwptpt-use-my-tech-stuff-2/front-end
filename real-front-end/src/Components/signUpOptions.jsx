@@ -1,23 +1,36 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import styled from 'styled-components';
+
+import {
+	SignUpH1,
+	SignUpWithButtonContainer,
+	SignUpWithFacebookButton,
+	SignUpWithFacebookButtonImg,
+	FacebookButtonFormat,
+	SignUpWithGoogleButton,
+	SignUpWithGoogleButtonImg,
+	SignUpWithEmailButton,
+	SignUpWithEmailButtonImg
+} from './Styles';
 
 const SignUpOptions = () => {
 	return (
 		<div>
 			<div className='title'>
-				<h1>Use My Tech Stuff</h1>
+				<SignUpH1>Use My Tech Stuff</SignUpH1>
 			</div>
-			<div className='links-container'>
+			<SignUpWithButtonContainer className='links-container'>
 				<Link to=''>
-					<button className='link'>Sign up with Facebook</button>
+					<SignUpWithFacebookButton className='link'><SignUpWithFacebookButtonImg src='https://pngimg.com/uploads/facebook_logos/facebook_logos_PNG19751.png' />Sign up with Facebook</SignUpWithFacebookButton>
 				</Link>
 				<Link to=''>
-					<button className='link'>Sign up with Google</button>
+					<SignUpWithGoogleButton className='link'><SignUpWithGoogleButtonImg src='https://pluspng.com/img-png/google-logo-png-open-2000.png' />Sign up with Google</SignUpWithGoogleButton>
 				</Link>
 				<Link to='/register'>
-					<button className='link'>Sign up with Email</button>
+					<SignUpWithEmailButton className='link'><SignUpWithEmailButtonImg src='https://pluspng.com/img-png/email-icon-png-email-icon-2048.png' />Sign up with Email</SignUpWithEmailButton>
 				</Link>
-			</div>
+			</SignUpWithButtonContainer>
 		</div>
 	);
 };

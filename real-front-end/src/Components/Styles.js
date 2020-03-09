@@ -7,7 +7,6 @@ import styled, { css } from 'styled-components';
 export const StyledContainer = styled.div`
     width: 375px;
     margin: 15px 15px 80px 15px;
-
     margin: 0 auto;
 `;
 
@@ -36,7 +35,7 @@ export const UniversalH1 = styled.h1`
     font-weight: bold;
     font-size: 30px;
     line-height: 36px;
-    margin: 84px 0px 32px 0px;
+    margin: 54px 0px 32px 0px;
     text-align: center;
 `;
 
@@ -110,16 +109,19 @@ export const SignInH1 = styled.h1`
     font-weight: bold;
     font-size: 30px;
     line-height: 36px;
-    margin: 84px 0px 32px 0px;
+    margin: 54px 0px 32px 0px;
 `;
 
-export const StyledLabelSpan = styled.span`
+export const StyledLabelDiv = styled.div`
     text-align: left;
 `;
 
 export const SignInSignInButton = styled.button`
     width: 343px;
     height: 44px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 1em;
     color: black;
     background: rgba(237, 85, 59, 0.4);
     border: 2px solid gray;
@@ -133,33 +135,110 @@ export const SignInSignInButton = styled.button`
 `;
 
 
-//Sign up Page ----------------------------------------
+//SignUpWith Page ----------------------------------------
 
 
-export const SignUpSubmitButton = styled.button`
+export const SignUpWithButtonContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+`;
+
+//SignUpH1 used here
+
+
+export const SignUpWithFacebookButton = styled.button`
     width: 343px;
-    height: 44px;
+    height: 64px;
+    color: white;
+    font-size: 1em;
+    font-weight: bold;
+    background: #3D5A98;;
+    border: 1px solid white;
+    border-radius: 6px;
+    margin: 20px;
+    padding-bottom: 15px;
+
+    :hover {
+        opacity: 70%;
+    }
+`;
+
+export const SignUpWithFacebookButtonImg = styled.img`
+    width: 40px;
+    margin-right: 20px;
+`;
+
+export const SignUpWithGoogleButton = styled.button`
+    width: 343px;
+    height: 64px;
     color: black;
     font-size: 1em;
     font-weight: bold;
-    background: rgba(237, 85, 59, 0.4);
-    border: 2px solid gray;
-    border-radius: 12px;
-    margin-top: 100px;
+    background: #E9E9E9;
+    border: 1px solid white;
+    border-radius: 6px;
+    margin: 20px;
+    padding-bottom: 10px;
 
     :hover {
-        color: white;
-        background: rgba(237, 85, 59, 0.8);
+        opacity: 70%;
     }
 `;
+
+export const SignUpWithGoogleButtonImg = styled.img`
+    width: 25px;
+    margin-right: 20px;
+`;
+
+export const SignUpWithEmailButton = styled.button`
+    width: 343px;
+    height: 64px;
+    color: white;
+    font-size: 1em;
+    font-weight: bold;
+    background: rgba(237, 85, 59, 0.8);
+    border: 1px solid white;
+    border-radius: 6px;
+    margin: 20px;
+    padding-bottom: 20px;
+
+    :hover {
+        opacity: 70%;
+    }
+`;
+
+export const SignUpWithEmailButtonImg = styled.img`
+    width: 40px;
+    margin-right: 20px;
+`;
+
+//Sign up Page ----------------------------------------
+
 
 export const SignUpH1 = styled.h1`
     font-family: 'Roboto', sans-serif;
     font-weight: bold;
     font-size: 30px;
     line-height: 36px;
-    margin: 84px 0px 64px 0px;
+    margin: 54px 0px 64px 0px;
     text-align: center;
+`;
+
+export const SignUpSubmitButton = styled.button`
+    width: 100%;
+    height: 44px;
+    color: black;
+    font-size: 1em;
+    font-weight: bold;
+    background: rgba(237, 85, 59, 0.4);
+    border: 1px solid gray;
+    border-radius: 12px;
+    margin-top: 60px;
+
+    :hover {
+        color: white;
+        background: rgba(237, 85, 59, 0.8);
+    }
 `;
 
 
@@ -286,7 +365,7 @@ export const ItemsListedH1 = styled.h1`
     font-weight: bold;
     font-size: 30px;
     line-height: 36px;
-    margin: 64px 0px 32px 0px;
+    margin: 54px 0px 32px 0px;
     text-align: center;
 `;
 
@@ -342,6 +421,70 @@ export const ItemListRentButton = styled.button`
     }
 `;
 
+
+//RentItem Page ----------------------------------------
+
+
+export const RentItemContainer = styled.div`
+    width: 375px;
+    margin: 0 auto;
+`;
+
+export const RentItemTextContainer = styled.div`
+    width: 330px;
+    margin: 0 auto;
+`;
+
+export const RentItemImg = styled.img`
+    margin: 20px 0px 20px 0px;
+    width: 330px;
+    max-height: 230px;
+    border-radius: 10px;
+`;
+
+export const RentItemH2 = styled.h2`
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 22px;
+    margin-bottom: 30px;
+    text-align: left;
+`;
+
+export const RentItemH3 = styled.h3`
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: .85em;
+    margin: 10px 0px 10px 0px;
+    text-align: left;
+`;
+
+export const RentItemDiv = styled.div`
+    width: 80%;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    color: gray;
+    font-size: .80em;
+    text-align: left;
+    padding: 20px 0px 20px 0px;
+`;
+
+export const RentNowButton = styled.button`
+    width: 90%;
+    height: 30px;
+    margin: 10px 0px 10px 0px;
+    color: white;
+    font-size: .85em;
+    font-weight: bold;
+    background: rgba(32, 99, 155, 0.8);
+    border: 1px solid gray;
+    border-radius: 6px;
+
+    :hover {
+        color: white;
+        background: rgba(32, 99, 155, 0.8);
+        opacity: 65%;
+    }
+`;
 
 //NavBar Page ----------------------------------------
 
