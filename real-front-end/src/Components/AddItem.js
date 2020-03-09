@@ -8,6 +8,21 @@ import Navbar from './navbar';
 import { ProductContext } from '../Context/ProductContext';
 import { Redirect } from 'react-router-dom';
 
+//styled-components
+import styled from 'styled-components';
+
+import {
+	AddListingStyledContainer,
+	AddListingH1,
+	AddItemP,
+	AddItemInput,
+	CategoryModalH1,
+	CategoryModalH2,
+	CategoryButton,
+	SelectCategoryModalContainer,
+	CategoryModalButton,
+} from './Styles';
+
 const AddItem = props => {
 	const { products, setProducts } = useContext(ProductContext);
 	let categoryName = '',
@@ -63,9 +78,9 @@ const AddItem = props => {
 	filterCondition();
 
 	return (
-		<div className='container'>
+		<AddListingStyledContainer className='container'>
 			<div className='title-container'>
-				<h1>New Listing</h1>
+				<AddListingH1>New Listing</AddListingH1>
 			</div>
 			<div className='img-container'>
 				<img
@@ -76,12 +91,12 @@ const AddItem = props => {
 					}}
 					alt='tech product'
 				/>
-				<p>Add Image</p>
+				<AddItemP>Add Image</AddItemP>
 			</div>
 			<div className='form'>
 				<div className='form-input'>
 					<h2>Image URL</h2>
-					<input
+					<AddItemInput
 						type='url'
 						name='ImagePath'
 						value={newListing.ImagePath}
@@ -90,7 +105,7 @@ const AddItem = props => {
 				</div>
 				<div className='form-input'>
 					<h2>Title</h2>
-					<input
+					<AddItemInput
 						type='text'
 						name='Title'
 						value={newListing.Title}
@@ -99,11 +114,11 @@ const AddItem = props => {
 				</div>
 				<div className='form-input'>
 					<h2>Description</h2>
-					<textarea
+					<AddItemInput
 						name='Description'
 						value={newListing.Description}
 						onChange={handleChange}
-					></textarea>
+					></AddItemInput>
 				</div>
 
 				<div className='form-input'>
@@ -111,22 +126,22 @@ const AddItem = props => {
 					<Popup
 						modal
 						trigger={
-							<button onChange={handleChange} className='select-category'>
+							<CategoryButton onChange={handleChange} className='select-category'>
 								{categoryName}
-							</button>
+							</CategoryButton>
 						}
 					>
 						{close => (
-							<div className='modal'>
+							<SelectCategoryModalContainer className='modal'>
 								<div className='heading'>
-									<h1>New listing</h1>
+									<CategoryModalH1>New listing</CategoryModalH1>
 								</div>
 								<div className='sub-heading'>
-									<h2>Choose Category</h2>
+									<CategoryModalH2>Choose Category</CategoryModalH2>
 								</div>
 								<div className='category-list'>
 									<div className='category'>
-										<button
+										<CategoryModalButton
 											name='category_id'
 											value='1'
 											onClick={() => {
@@ -135,10 +150,10 @@ const AddItem = props => {
 											}}
 										>
 											Camera
-										</button>
+										</CategoryModalButton>
 									</div>
 									<div className='category'>
-										<button
+										<CategoryModalButton
 											name='category_id'
 											value='2'
 											onClick={() => {
@@ -147,10 +162,10 @@ const AddItem = props => {
 											}}
 										>
 											Projector
-										</button>
+										</CategoryModalButton>
 									</div>
 									<div className='category'>
-										<button
+										<CategoryModalButton
 											name='category_id'
 											value='3'
 											onClick={() => {
@@ -159,10 +174,10 @@ const AddItem = props => {
 											}}
 										>
 											TV
-										</button>
+										</CategoryModalButton>
 									</div>
 									<div className='category'>
-										<button
+										<CategoryModalButton
 											name='category_id'
 											value='4'
 											onClick={() => {
@@ -171,10 +186,10 @@ const AddItem = props => {
 											}}
 										>
 											Instrument
-										</button>
+										</CategoryModalButton>
 									</div>
 									<div className='category'>
-										<button
+										<CategoryModalButton
 											name='category_id'
 											value='5'
 											onClick={() => {
@@ -183,10 +198,10 @@ const AddItem = props => {
 											}}
 										>
 											Party
-										</button>
+										</CategoryModalButton>
 									</div>
 									<div className='category'>
-										<button
+										<CategoryModalButton
 											name='category_id'
 											value='6'
 											onClick={() => {
@@ -195,10 +210,10 @@ const AddItem = props => {
 											}}
 										>
 											Other
-										</button>
+										</CategoryModalButton>
 									</div>
 								</div>
-							</div>
+							</SelectCategoryModalContainer>
 						)}
 					</Popup>
 				</div>
@@ -212,7 +227,7 @@ const AddItem = props => {
 			/> */}
 				<div className='form-input'>
 					<h2>Price per hour</h2>
-					<input
+					<AddItemInput
 						type='text'
 						name='PricePerHour'
 						value={newListing.PricePerHour}
@@ -221,7 +236,7 @@ const AddItem = props => {
 				</div>
 				<div className='form-input'>
 					<h2>Price per day</h2>
-					<input
+					<AddItemInput
 						type='text'
 						name='PricePerDay'
 						value={newListing.PricePerDay}
@@ -249,22 +264,22 @@ const AddItem = props => {
 					<Popup
 						modal
 						trigger={
-							<button onChange={handleChange} className='select-condition'>
+							<CategoryButton onChange={handleChange} className='select-condition'>
 								{conditionName}
-							</button>
+							</CategoryButton>
 						}
 					>
 						{close => (
-							<div className='modal'>
+							<SelectCategoryModalContainer className='modal'>
 								<div className='heading'>
-									<h1>New listing</h1>
+									<CategoryModalH1>New listing</CategoryModalH1>
 								</div>
 								<div className='sub-heading'>
-									<h2>Choose Condition</h2>
+									<CategoryModalH2>Choose Condition</CategoryModalH2>
 								</div>
 								<div className='condition-list'>
 									<div className='condition'>
-										<button
+										<CategoryModalButton
 											name='condtion_id'
 											value='1'
 											onClick={() => {
@@ -273,10 +288,10 @@ const AddItem = props => {
 											}}
 										>
 											Mint
-										</button>
+										</CategoryModalButton>
 									</div>
 									<div className='condition'>
-										<button
+										<CategoryModalButton
 											name='condtion_id'
 											value='2'
 											onClick={() => {
@@ -285,10 +300,10 @@ const AddItem = props => {
 											}}
 										>
 											New
-										</button>
+										</CategoryModalButton>
 									</div>
 									<div className='condition'>
-										<button
+										<CategoryModalButton
 											name='condtion_id'
 											value='3'
 											onClick={() => {
@@ -297,10 +312,10 @@ const AddItem = props => {
 											}}
 										>
 											Good
-										</button>
+										</CategoryModalButton>
 									</div>
 									<div className='condition'>
-										<button
+										<CategoryModalButton
 											name='condtion_id'
 											value='4'
 											onClick={() => {
@@ -309,10 +324,10 @@ const AddItem = props => {
 											}}
 										>
 											Fair
-										</button>
+										</CategoryModalButton>
 									</div>
 									<div className='condition'>
-										<button
+										<CategoryModalButton
 											name='condtion_id'
 											value='5'
 											onClick={() => {
@@ -321,10 +336,10 @@ const AddItem = props => {
 											}}
 										>
 											Damaged
-										</button>
+										</CategoryModalButton>
 									</div>
 									<div className='condition'>
-										<button
+										<CategoryModalButton
 											name='condtion_id'
 											value='6'
 											onClick={() => {
@@ -333,10 +348,10 @@ const AddItem = props => {
 											}}
 										>
 											Broken
-										</button>
+										</CategoryModalButton>
 									</div>
 								</div>
-							</div>
+							</SelectCategoryModalContainer>
 						)}
 					</Popup>
 				</div>
@@ -346,7 +361,7 @@ const AddItem = props => {
 				</button>
 			</div>
 			<Navbar />
-		</div>
+		</AddListingStyledContainer>
 	);
 };
 
