@@ -1,4 +1,6 @@
 import React, { useContext, useState, useEffect } from 'react';
+import Navbar from './navbar';
+
 import { axiosWithAuth } from '../utils/axiosWithAuth';
 import { UserContext } from '../Context/UserContext';
 
@@ -141,6 +143,7 @@ const AccountSettings = props => {
 			</form>
 			<button onClick={handleDeleteUser}>Delete Account</button>
 			{/* <button onClick={handleGetUsers}>Get Users</button> */}
+			<Navbar />
 		</div>
 	);
 };
