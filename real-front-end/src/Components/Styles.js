@@ -170,18 +170,109 @@ export const AddListingStyledContainer = styled.div`
     display: flex;
     flex-direction: column;
     width: 375px;
-    margin: 15px;
+    margin: 15px 15px 80px 15px;
     margin: 0 auto;
     text-align: left;
 `;
+
+// export const AddItemImg = styled.img`
+//     display: flex;
+//     justify-content: center;
+//     align-content: center;
+//     width: 200px;
+//     align-content: center;
+//     max-height: 160px;
+// 	border-radius: 8px 8px 0px 0px;
+// `;
 
 export const AddListingH1 = styled.h1`
     font-family: 'Roboto', sans-serif;
     font-weight: bold;
     font-size: 30px;
     line-height: 36px;
-    margin: 84px 0px 32px 0px;
+    margin: 36px 0px 8px 0px;
     text-align: center;
+`;
+
+export const AddItemP = styled.p`
+    font-family: 'Roboto', sans-serif;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+`;
+
+export const AddItemInput = styled.input`
+    width: 90%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 1.5px solid gray;
+    border-radius: 4px;
+`;
+
+export const CategoryButton = styled.button`
+    width: 85px;
+    height: 30px;
+    margin: 10px 0px 10px 0px;
+    color: white;
+    font-size: .75em;
+    background: rgba(32, 99, 155, 0.8);
+    border: 1px solid gray;
+    border-radius: 6px;
+
+    :hover {
+        color: white;
+        background: rgba(32, 99, 155, 0.8);
+        opacity: 65%;
+    }
+`;
+
+//AddItemCategoryModalStyles----------------------------------------
+
+
+export const SelectCategoryModalContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    margin: 0 auto;
+    text-align: center;
+`;
+
+export const CategoryModalH1 = styled.h1`
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 30px;
+    margin: 12px 0px 8px 0px;
+    text-align: center;
+`;
+
+export const CategoryModalH2 = styled.h2`
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 20px;
+    margin: 8px 0px 8px 0px;
+    text-align: center;
+`;
+
+
+export const CategoryModalButton = styled.button`
+    width: 90%;
+    height: 30px;
+    margin: 10px 0px 10px 0px;
+    color: white;
+    font-size: .75em;
+    background: rgba(32, 99, 155, 0.8);
+    border: 1px solid gray;
+    border-radius: 6px;
+
+    :hover {
+        color: white;
+        background: rgba(32, 99, 155, 0.8);
+        opacity: 65%;
+    }
 `;
 
 
