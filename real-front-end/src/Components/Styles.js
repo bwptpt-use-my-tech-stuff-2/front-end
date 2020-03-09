@@ -35,7 +35,7 @@ export const UniversalH1 = styled.h1`
     font-weight: bold;
     font-size: 30px;
     line-height: 36px;
-    margin: 84px 0px 32px 0px;
+    margin: 54px 0px 32px 0px;
     text-align: center;
 `;
 
@@ -109,16 +109,19 @@ export const SignInH1 = styled.h1`
     font-weight: bold;
     font-size: 30px;
     line-height: 36px;
-    margin: 84px 0px 32px 0px;
+    margin: 54px 0px 32px 0px;
 `;
 
-export const StyledLabelSpan = styled.span`
+export const StyledLabelDiv = styled.div`
     text-align: left;
 `;
 
 export const SignInSignInButton = styled.button`
     width: 343px;
     height: 44px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 1em;
     color: black;
     background: rgba(237, 85, 59, 0.4);
     border: 2px solid gray;
@@ -217,7 +220,7 @@ export const SignUpH1 = styled.h1`
     font-weight: bold;
     font-size: 30px;
     line-height: 36px;
-    margin: 84px 0px 64px 0px;
+    margin: 54px 0px 64px 0px;
     text-align: center;
 `;
 
@@ -362,7 +365,7 @@ export const ItemsListedH1 = styled.h1`
     font-weight: bold;
     font-size: 30px;
     line-height: 36px;
-    margin: 64px 0px 32px 0px;
+    margin: 54px 0px 32px 0px;
     text-align: center;
 `;
 

@@ -5,7 +5,7 @@ import { UserContext } from '../Context/UserContext';
 import { RenterContext } from '../Context/ProductContext';
 import styled from 'styled-components';
 
-import { AddListingStyledContainer, StyledInput, SignUpH1, SignUpSubmitButton } from './Styles';
+import { StyledContainer, StyledInput, SignUpH1, SignUpSubmitButton, StyledLabelDiv } from './Styles';
 
 
 const SignUp = props => {
@@ -50,74 +50,78 @@ const SignUp = props => {
 		} else alert('Passwords do not match!!');
 	};
 
-	// Styled Components
-	const Title = Styled.h1`
-		position: absolute;
-		left: 0%;
-		right: 0%;
-		top: 0%;
-		bottom: 5.26%;
-		font-family: SF Pro Text;
-		font-style: normal;
-		font-weight: bold;
-		font-size: 30px;
-		line-height: 36px;
-	`;
-
 	// Destructuring
 	const { FirstName, LastName, Email, Password, Location } = credentials;
 	const { ConfirmPassword } = confirmPassword;
 
 	return (
-		<AddListingStyledContainer>
+		<StyledContainer>
 			<SignUpH1 className='title'>Sign up with email</SignUpH1>
 			<form onSubmit={handleSubmit}>
-				<label>First name</label>
+				<StyledLabelDiv>
+					<label>First name</label>
+				</StyledLabelDiv>
+					<StyledInput
+						type='text'
+						name='FirstName'
+						value={FirstName}
+						onChange={handleChange}
+						required
+					/>
+				<StyledLabelDiv>
+					<label>Last name</label>
+				</StyledLabelDiv>
+					<StyledInput
+						type='text'
+						name='LastName'
+						value={LastName}
+						onChange={handleChange}
+						required
+					/>
+				<StyledLabelDiv>
+					<label>Location</label>
+				</StyledLabelDiv>
+					<StyledInput
+						type='text'
+						name='Location'
+						value={Location}
+						placeholder='ex. Atlanta, GA'
+						onChange={handleChange}
+						required
+					/>
+				<StyledLabelDiv>
+					<label>Email</label>
+				</StyledLabelDiv>
 				<StyledInput
-					type='text'
-					name='FirstName'
-					value={FirstName}
-					onChange={handleChange}
-					required
-				/>
-				<label>Last name</label>
-				<StyledInput
-					type='text'
-					name='LastName'
-					value={LastName}
-					onChange={handleChange}
-					required
-				/>
-				<label>Location</label>
-				<StyledInput
-					type='text'
-					name='Location'
-					value={Location}
-					placeholder='ex. Atlanta, GA'
-					onChange={handleChange}
-					required
-				/>
-				<label>Email</label>
-				<StyledInput type='email' name='Email' value={Email} onChange={handleChange} required />
-				<label>Password</label>
-				<StyledInput
-					type='password'
-					name='Password'
-					value={Password}
-					onChange={handleChange}
-					required
-				/>
-				<label>Confirm Password</label>
-				<StyledInput
-					type='password'
-					name='ConfirmPassword'
-					value={ConfirmPassword}
-					onChange={handleChangePassword}
-					required
-				/>
+						type='email' 
+						name='Email' 
+						value={Email} 
+						onChange={handleChange} 
+						required 
+					/>
+				<StyledLabelDiv>
+					<label>Password</label>
+				</StyledLabelDiv>
+					<StyledInput
+						type='password'
+						name='Password'
+						value={Password}
+						onChange={handleChange}
+						required
+					/>
+				<StyledLabelDiv>
+					<label>Confirm Password</label>
+				</StyledLabelDiv>
+					<StyledInput
+						type='password'
+						name='ConfirmPassword'
+						value={ConfirmPassword}
+						onChange={handleChangePassword}
+						required
+					/>
 				<SignUpSubmitButton onClick={handleSubmit}>Submit</SignUpSubmitButton>
 			</form>
-		</AddListingStyledContainer>
+		</StyledContainer>
 	);
 };
 
