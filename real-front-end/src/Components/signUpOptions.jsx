@@ -1,23 +1,32 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import styled from 'styled-components';
+
+import {
+	SignUpH1,
+	SignUpWithButtonContainer,
+	SignUpWithFacebookButton,
+	SignUpWithGoogleButton,
+	SignUpWithEmailButton
+} from './Styles';
 
 const SignUpOptions = () => {
 	return (
 		<div>
 			<div className='title'>
-				<h1>Use My Tech Stuff</h1>
+				<SignUpH1>Use My Tech Stuff</SignUpH1>
 			</div>
-			<div className='links-container'>
+			<SignUpWithButtonContainer className='links-container'>
 				<Link to=''>
-					<button className='link'>Sign up with Facebook</button>
+					<SignUpWithFacebookButton className='link'>Sign up with Facebook</SignUpWithFacebookButton>
 				</Link>
 				<Link to=''>
-					<button className='link'>Sign up with Google</button>
+					<SignUpWithGoogleButton className='link'>Sign up with Google</SignUpWithGoogleButton>
 				</Link>
 				<Link to='/register'>
-					<button className='link'>Sign up with Email</button>
+					<SignUpWithEmailButton className='link'>Sign up with Email</SignUpWithEmailButton>
 				</Link>
-			</div>
+			</SignUpWithButtonContainer>
 		</div>
 	);
 };

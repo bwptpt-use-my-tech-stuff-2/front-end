@@ -132,25 +132,68 @@ export const SignInSignInButton = styled.button`
 `;
 
 
-//Sign up Page ----------------------------------------
+//SignUpWith Page ----------------------------------------
 
 
-export const SignUpSubmitButton = styled.button`
+export const SignUpWithButtonContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+`;
+
+
+//SignUpH1 used here
+
+
+export const SignUpWithFacebookButton = styled.button`
     width: 343px;
-    height: 44px;
+    height: 64px;
+    color: white;
+    font-size: 1em;
+    font-weight: bold;
+    background: #4260B5;;
+    border: 1px solid white;
+    border-radius: 6px;
+    margin: 20px;
+
+    :hover {
+        opacity: 70%;
+    }
+`;
+
+export const SignUpWithGoogleButton = styled.button`
+    width: 343px;
+    height: 64px;
     color: black;
     font-size: 1em;
     font-weight: bold;
-    background: rgba(237, 85, 59, 0.4);
-    border: 2px solid gray;
-    border-radius: 12px;
-    margin-top: 100px;
+    background: #E9E9E9;
+    border: 1px solid white;
+    border-radius: 6px;
+    margin: 20px;
 
     :hover {
-        color: white;
-        background: rgba(237, 85, 59, 0.8);
+        opacity: 70%;
     }
 `;
+
+export const SignUpWithEmailButton = styled.button`
+    width: 343px;
+    height: 64px;
+    color: white;
+    font-size: 1em;
+    font-weight: bold;
+    background: rgba(237, 85, 59, 0.8);
+    border: 1px solid white;
+    border-radius: 6px;
+    margin: 20px;
+
+    :hover {
+        opacity: 70%;
+    }
+`;
+
+//Sign up Page ----------------------------------------
+
 
 export const SignUpH1 = styled.h1`
     font-family: 'Roboto', sans-serif;
@@ -159,6 +202,23 @@ export const SignUpH1 = styled.h1`
     line-height: 36px;
     margin: 84px 0px 64px 0px;
     text-align: center;
+`;
+
+export const SignUpSubmitButton = styled.button`
+    width: 100%;
+    height: 44px;
+    color: black;
+    font-size: 1em;
+    font-weight: bold;
+    background: rgba(237, 85, 59, 0.4);
+    border: 1px solid gray;
+    border-radius: 12px;
+    margin-top: 60px;
+
+    :hover {
+        color: white;
+        background: rgba(237, 85, 59, 0.8);
+    }
 `;
 
 
